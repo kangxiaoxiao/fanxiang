@@ -158,10 +158,10 @@ Page({
     })
     //获取精品民宿列表
     if (this.data.topBarStatus!=0){
-      //this.getHouseList();
-      wx.navigateTo({
-        url: '/pages/goodHose/goodHouse',
-      })
+      this.getHouseList();
+      // wx.navigateTo({
+      //   url: '/pages/goodHose/goodHouse',
+      // })
     }  
     
   },

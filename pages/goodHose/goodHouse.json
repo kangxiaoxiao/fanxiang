@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "hotVillage": "/pages/components/hotVillage/hotVillage",
+    "goodVillage": "/pages/components/goodVillage/goodVillage"
+  }
+}

@@ -1,5 +1,4 @@
 <!--pages/goodHose/goodHouse.wxml-->
-
     <view class="conditionWrapper {{conditionTabStatus?'expand':''}}" >
         <view class="conditionTab">
           <view  
