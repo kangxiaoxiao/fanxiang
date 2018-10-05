@@ -1,0 +1,50 @@
+/* pages/components/dialog/dialog.wxss */
+.dialogWrapper{
+  position:fixed;
+  left:0;
+  right:0;
+  width:100%;
+  top:0;
+  bottom:0;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  z-index:100;
+}
+.dialogWrapper .dialogCon{
+  width:580rpx;
+  height:auto;
+  background:#fff;
+  margin:228rpx 86rpx 0 86rpx;
+  border-radius:12rpx;
+  box-shadow: 0 0 14rpx #333;
+}
+.dialogWrapper .dialogCon .content{
+  padding:50rpx 68rpx 60rpx 68rpx;
+}
+.dialogWrapper .dialogCon .content .dialogTitle{
+  font-size:28rpx;
+  line-height:26rpx;
+  color:#333;
+  text-align:center;
+  margin-bottom:60rpx;
+}
+.dialogWrapper .dialogCon .content .detail{
+  font-size:24rpx;
+  line-height:40rpx;
+  color:#666;
+}
+.dialogWrapper .dialogCon .content .detail .item{
+  padding-bottom:24rpx;
+}
+.dialogWrapper .dialogFooter{
+  margin-top:68rpx;
+}
+.dialogWrapper .dialogFooter button{
+  border-color:#33C2A6;
+  color:#33C2A6;
+  width:294rpx;
+  height:68rpx;
+  line-height:68rpx;
+  font-size:26rpx;
+  border-radius:6rpx;
+}

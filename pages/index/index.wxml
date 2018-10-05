@@ -1,0 +1,59 @@
+<view>
+  <view class="topBarWrapper {{topBarStatus!=0?'whitBg':''}}">
+    <view class="topBarCon">
+      <view class="item {{topBarStatus==0?'active':''}}" 
+            bindtap="changeTopBar"
+            data-status="0"
+            >
+            <view class="tabCon">
+              <view class="txt">热门推荐</view>
+              <view class="bottomLine"></view>
+            </view>  
+      </view>
+      <view class="item {{topBarStatus==1?'active':''}}" 
+          bindtap="changeTopBar"
+          data-status="1"
+          >
+           <view class="tabCon">
+             <view class="txt">精品民宿</view>
+             <view class="bottomLine"></view>
+           </view>    
+      </view>
+      <view class="item {{topBarStatus==2?'active':''}}" 
+            bindtap="changeTopBar"
+            data-status="2"
+            >
+            <view class="tabCon">
+              <view class="txt">乡村民居</view>
+              <view class="bottomLine"></view>
+            </view>  
+      </view>
+    </view>
+  </view>
+  <view class="hostVillage" >
+    <view class="cityList">
+      <view class="section">
+        <picker 
+         wx:if="{{cityListArray && cityListArray.length>0}}"
+          mode="selector"
+          range="{{cityListArray}}"
+          value="{{city_code}}"
+          range-key="{{city_name}}"
+          bindchange="bindRegionChange" 
+          >
+            <view class="addressPicker">
+              {{cityListArray[index]}}
+              <image class="creatIcon" src="/pages/img/icons/cret.png"></image>
+            </view> 
+        </picker>
+      </view>
+    </view>
+    <hotVillage 
+        village-list="{{villageList}}" 
+        swiper-height="{{Height}}"
+        wx:if="{{villageList && villageList.length}}"
+      >
+    </hotVillage> 
+  </view>
+  
+</view>

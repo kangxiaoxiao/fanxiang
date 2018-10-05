@@ -1,0 +1,115 @@
+.makeMoneyWrapper{
+  margin-top:20rpx;
+  margin-bottom:148rpx;
+}
+.makeMoneyWrapper .formTitle{
+  margin:24rpx 30rpx 34rpx 30rpx;
+}
+.makeMoneyWrapper .formWrapper{
+  margin:0 88rpx;
+}
+.makeMoneyWrapper .formTitle{
+  font-size:28rpx;
+  line-height:26rpx;
+  color:#333;
+  margin-bottom:34rpx;
+}
+.makeMoneyWrapper .item{
+  margin-bottom:24rpx;
+}
+.makeMoneyWrapper .item .imageWrapper{
+  font-size:0;
+  position:relative;
+  margin-bottom:22rpx;
+}
+.makeMoneyWrapper .item .imageWrapper image{
+  width:100%;
+  height:300rpx;
+}
+.loading{
+  position:absolute;
+  display:flex;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+.loading .loadingCon{
+  position:relative;
+  margin:auto;
+}
+.makeMoneyWrapper .item .imageWrapper .loading .loadingCon image{
+  display:block;
+  width:50rpx;
+  height:50rpx;
+  margin:0 auto;
+
+}
+.loading .loadingCon text{
+  display:block;
+  margin-top:10rpx;
+  font-size:24rpx;
+  color:#fff;
+}
+.submitBtn{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  background:#33C2A6;
+  color:#FFFFFF;
+  font-size:34rpx;
+  border-radius:0;
+  z-index: 1000;
+}
+.makeMoneyWrapper .item input{
+  border-radius:6rpx;
+  height:76rpx;
+  line-height:76rpx;
+  border:2rpx solid #CCCCCC;
+  color:#333;
+  font-size:28rpx;
+  padding:0 16rpx;
+}
+.makeMoneyWrapper .item textarea{
+  font-size:28rpx;
+  line-height:26rpx;
+  color:#333;
+  border:2rpx solid #ccc;
+  border-radius:6rpx;
+  display:block;
+  padding:16rpx;
+  width:540rpx;
+  height:254rpx;
+  overflow: auto；
+}
+.picker{
+  display: flex;
+  flex-direction: row;
+  border:2rpx solid #ccc;
+  height:76rpx;
+  line-height:76rpx;
+  overflow: hidden;
+}
+.picker .txt{
+  flex:1;
+  color:#333;
+  font-size:28rpx;
+  line-height:76rpx;
+  padding:0 18rpx;
+}
+.picker .txt.placeTxt,.phcolor{
+  color:#AEAEAE
+
+}
+.picker .creatIcon{
+  width:14rpx;
+  height:10rpx;
+  margin: auto 32rpx auto 0;
+  flex:0 0 10rpx;
+}

@@ -1,0 +1,22 @@
+/* pages/components/star/star.wxss */
+.starWrapper{
+  display:flex;
+  flex-direction:row;
+}
+.starWrapper .starTitle{
+  line-height:28rpx;
+  font-size:20rpx;
+  color:#fff;
+  display:inline-block
+}
+.starWrapper .starCon{
+  display:inline-block;
+}
+.starWrapper .starCon  .star{
+    display:inline-block;
+    padding:6rpx;
+    width:16rpx;
+    height:16rpx;
+    margin-right:6rpx;
+    position:relative;
+}

@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/find/index",
+    "pages/msg/index",
+    "pages/mine/index",
+    "pages/buyHouse/buyHouse",
+    "pages/rentHouse/rentHouse",
+    "pages/makeMoney/makeMoney",
+    "pages/login/login",
+    "pages/villageDetail/villageDetail",
+    "pages/article/article",
+    "pages/houseDetail/houseDetail",
+    "pages/goodHose/goodHouse"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "凡乡",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#92949C",
+    "selectedColor": "#33C2A6",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/img/icons/home.png",
+        "selectedIconPath": "pages/img/icons/homeLight.png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text": "发现",
+        "iconPath": "pages/img/icons/find.png",
+        "selectedIconPath": "pages/img/icons/findLight.png"
+      },
+      {
+        "pagePath": "pages/msg/index",
+        "text": "资讯",
+        "iconPath": "pages/img/icons/msg.png",
+        "selectedIconPath": "pages/img/icons/msgLight.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "pages/img/icons/mine.png",
+        "selectedIconPath": "pages/img/icons/mineLight.png"
+      }
+    ]
+  }
+}

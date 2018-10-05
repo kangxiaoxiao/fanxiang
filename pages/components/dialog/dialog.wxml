@@ -1,0 +1,14 @@
+<!--pages/components/dialog/dialog.wxml-->
+<view class="dialogWrapper" wx:if="{{isShow}}">
+  <view class="dialogCon">
+    <view class="content">
+      <view class="dialogTitle">{{title}}</view>
+      <view class="detail">
+        <slot name="con"></slot>
+      </view>
+      <view class="dialogFooter">
+        <button plain catchtap="_okEvent">{{footer}}</button>
+      </view>
+    </view> 
+  </view>
+</view>

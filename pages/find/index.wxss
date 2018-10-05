@@ -1,0 +1,92 @@
+/* pages/find/index.wxss */
+.findWrapper{
+  padding:0 30rpx;
+  background:#F9F9F9;
+}
+.findWrapper .top{
+  padding-top:20rpx;
+}
+.findWrapper .top .li .item{
+  position:relative;
+  display:inline-block;
+  width:50%;
+}
+.findWrapper .top .li  image{
+  display:inline-block;
+  width:100%;
+  height:120rpx;
+ 
+}
+.findWrapper .top .li .item .left{
+  padding-right:7rpx;
+}
+.findWrapper .top .li .item .right{
+  padding-left:7rpx;
+}
+.imgCon{
+  position:relative;
+}
+.imgCon .txt{
+  position:absolute;
+  bottom:10rpx;
+  left:0;
+  right:0;
+  width:100%;
+  padding-left:10rpx;
+  font-size:26rpx;
+  color:#fefefe;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.VillagelistWrapper{
+  margin-top:50rpx;
+}
+.VillagelistWrapper .modeTitle{
+  margin-bottom:28rpx;
+}
+.VillagelistWrapper .modeTitle .verticalLine{
+  width:6rpx;
+  height:32rpx;
+  display:inline-block;
+  background:#33C2A6;
+}
+.VillagelistWrapper .modeTitle .txt{
+  display:inline-block;
+  margin-left:14rpx;
+  font-size:32rpx;
+  line-height:32rpx;
+  color:#333333;
+}
+.VillagelistCon .item{
+  position:relative;
+  margin-bottom:18rpx;
+  border-radius:12rpx;
+  overflow: hidden;
+  font-size:0;
+}
+.VillagelistCon .item image{
+  width:100%;
+  height:430rpx;
+}
+.VillagelistCon .item .introWrapper{
+  position:absolute;
+  left:0;
+  bottom:0;
+  right:0;
+  width:100%;
+}
+.VillagelistCon .item .introWrapper .introCon{
+  margin:0 0 20rpx 20rpx;
+}
+.VillagelistCon .item .introWrapper .introCon .villageTitle{
+  font-size:28rpx;
+  line-height:28rpx;
+  color:#FFFFFF;
+  padding-bottom:14rpx;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.VillagelistCon .item .introWrapper .introCon .des{
+  font-size:24rpx;
+  line-height:24rpx;
+  color:#fff;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}

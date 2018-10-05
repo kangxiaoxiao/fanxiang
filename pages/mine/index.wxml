@@ -1,0 +1,74 @@
+<view class="mineWrapper">
+  <view class="top">
+    <view class="headImgWrapper">
+      <image class="bg" mode="aspectFill" src="/pages/img/mine/defaultImg.jpg"></image>
+      <view class="mineMsg">
+        <!-- <image class="headImage" mode="aspectFill" src="{{userInfo.headUrl?userInfo.headUrl:'/pages/img/mine/head.jpg'}}"></image> -->
+        <view class="headImage" >
+          <open-data type="userAvatarUrl"></open-data>
+        </view> 
+        <open-data class="userName" type="userNickName"></open-data>
+      </view>   
+    </view>
+    <view class="orderPanel">
+      <view class="orderPanelCon">
+         <view class="panelTitle">我的订单</view>
+        <view class="lis">
+          <view class="item">
+              <image mode="aspectFit" src="/pages/img/mine/home.png"></image>
+              <text>待入住</text>
+          </view>
+          <view class="item">
+              <image mode="aspectFit" src="/pages/img/mine/pay.png"></image>
+              <text>待支付</text>
+          </view>
+          <view class="item">
+              <image mode="aspectFit" src="/pages/img/mine/all.png"></image>
+              <text>全部</text>
+          </view>
+        </view>
+      </view>   
+    </view>
+  </view>
+  <view class="liWrapper">
+    <view class="lisCon">
+        <view class="item">
+      <view class="left">
+        <image  mode="aspectFit" src="/pages/img/mine/collect.png"></image>
+        <text>我的收藏</text>
+      </view>
+        <image class="more"  mode="aspectFit" src="/pages/img/mine/cret.png"></image>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image  mode="aspectFit" src="/pages/img/mine/invite.png"></image>
+          <text>邀请好友</text>
+        </view>
+        <view class="right">
+          <image class="more" mode="aspectFit" src="/pages/img/mine/cret.png"></image>
+        </view> 
+      </view>
+      <view class="item">
+        <view class="left">
+          <image  mode="aspectFit" src="/pages/img/mine/aboutUs.png"></image>
+          <text>关于我们</text>
+        </view>
+        <view class="right">
+          <image  class="more" mode="aspectFit" src="/pages/img/mine/cret.png"></image>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <image  mode="aspectFit" src="/pages/img/mine/collect.png"></image>
+          <text>联系我们</text>
+        </view>
+        <view class="right telWrapper">
+          <text class="tel">4008888</text>
+          <image  mode="aspectFit" src="/pages/img/mine/cret.png"></image>
+        </view>  
+      </view>
+    </view>
+  </view>
+  <view class="item loginOut" bindtap='loginOut' wx:if="{{token}}">退出登录</view>
+  <view class="item loginOut" bindtap='login' wx:if="{{!token}}">登录</view>
+</view>

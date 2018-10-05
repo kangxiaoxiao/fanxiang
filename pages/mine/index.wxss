@@ -1,0 +1,143 @@
+/* pages/mine/index.wxss */
+.mineWrapper .top .headImgWrapper{
+  position:relative;
+}
+.mineWrapper .top .headImgWrapper .bg{
+  display:block;
+  width:100%;
+  height:320rpx;
+}
+.mineWrapper .top .headImgWrapper .mineMsg{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  width:100%;
+  height:auto;
+  text-align:center;
+}
+.mineWrapper .top .headImgWrapper .headImage{
+  width:120rpx;
+  height:120rpx;
+  margin-top:46rpx;
+  border-radius:60rpx;
+  border:2rpx solid #fff;
+  display:inline-block;
+  overflow:hidden;
+}
+.mineWrapper .top .headImgWrapper .userName{
+  display:block;
+  color:#fff;
+  font-size:30rpx;
+  line-height:30rpx;
+}
+.mineWrapper .orderPanel{
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height:auto;
+}
+.orderPanelCon{
+  margin:-40rpx 30rpx 22rpx 30rpx;
+  border-radius:12rpx;
+  background:#fff;
+  overflow: hidden;
+  box-shadow: 0 0 14rpx #e5e5e5;
+}
+.mineWrapper .orderPanel .panelTitle{
+  font-size:20rpx;
+  line-height:20rpx;
+  color:#333;
+  margin:20rpx 0;
+  padding:0 20rpx;
+}
+.mineWrapper .orderPanel .lis{
+  display:flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+.mineWrapper .orderPanel .lis .item{
+  text-align:center;
+  position:relative;
+  margin-bottom:20rpx;
+}
+.mineWrapper .orderPanel .lis .item image{
+  display:block;
+  width:44rpx;
+  height:44rpx;
+  margin:0 auto;
+}
+.mineWrapper .orderPanel .lis .item text{
+  display:block;
+  font-size:26rpx;
+  line-height:26rpx;
+  margin:14rpx 0;
+  color:#333;
+}
+.liWrapper{
+  margin-top:160rpx;
+}
+.liWrapper .lisCon{
+   background:#fff;
+}
+.liWrapper .item{
+  font-size:0;
+  height:92rpx;
+  line-height:92rpx;
+  display:flex;
+  flex-direction: row;
+  padding:0 42rpx;
+  border-bottom:2rpx solid #f5f5f5;
+  align-items:center;
+}
+.liWrapper .item .left{
+  display:flex;
+  flex-direction: row;
+}
+.liWrapper .item image{
+  display:block;
+  width:40rpx;
+  height:40rpx;
+  margin:auto 0;
+}
+.liWrapper .item text{
+  display:inline-block;
+  font-size:28rpx;
+  color:#333;
+  padding-left:28rpx;
+}
+.liWrapper .item text.tel{
+  display:inline-block;
+  padding:0 30rpx 0 28rpx;
+}
+.liWrapper .item .left{
+  flex:1;
+}
+.liWrapper .item  .more{
+  display:block;
+  flex:0 0 14rpx;
+  width:14rpx;
+  height:24rpx;
+  margin:auto 0;
+}
+.liWrapper .item .telWrapper image{
+  display:inline-block;
+  width:14rpx;
+  height:24rpx;
+  margin:auto 0;
+} 
+.liWrapper .item  .telWrapper{
+  display:block;
+  flex:0 0 200rpx;
+  width:200rpx;
+  text-align: right;
+}
+.loginOut{
+  margin-top:60rpx;
+  font-size:28rpx;
+  line-height:92rpx;
+  text-align:center;
+  background:#fff;
+  color:#666;
+}

@@ -1,0 +1,84 @@
+<!--pages/goodHose/goodHouse.wxml-->
+
+    <view class="conditionWrapper {{conditionTabStatus?'expand':''}}" >
+        <view class="conditionTab">
+          <view  
+              bindtap="tapName"
+              data-status="1"
+              class="item {{condition.city_code?'active':''}}" >
+            <text>位置</text>
+            <image src="{{conditionTabStatus!=1?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
+          </view>
+          <view 
+            bindtap="tapName"
+            data-status="2"
+            class="item {{condition.type?'active':''}}" >
+            <text>筛选</text>
+            <image src="{{conditionTabStatus!=2?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
+          </view>
+          <view  
+            bindtap="tapName"
+            data-status="3"
+            class="item {{condition.sort_type?'active':''}}">
+            <text>排序</text>
+            <image src="{{conditionTabStatus!=3?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
+          </view>
+        </view>
+        <view class="conditionCon">
+          <view class="conWrapperItem addressItem" wx:if="{{cityListValueArray&&cityListValueArray.length && conditionTabStatus==1}}">
+             <view 
+               class="item {{condition.city_code==item.city_code?'active':''}}" 
+               wx:for="{{cityListValueArray}}" 
+               wx:key="item.city_code"
+               bindtap='handleCity'
+               data-citycode="{{item.city_code}}"
+               >
+                <text>{{item.city_name}}</text>
+                <image
+                   wx:if="{{condition.city_code==item.city_code}}"
+                   src="/pages/img/icons/right.png"></image>
+             </view>
+          </view>
+          <view class="conWrapperItem shaixuanItem" wx:if="{{conditionTabStatus==2}}">
+            <view class="tabTitle">经营状态</view>
+            <view class="tabItemWrapper">
+              <view 
+               class="tabItem {{condition.type==item.value?'active':''}}" 
+               wx:key="{{index}}" 
+               wx:for="{{filterParams.filter_type}}"
+               bindtap='handleType'
+               data-value="{{item.value}}"
+               >
+                <text>{{item.title}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="conWrapperItem sortItem" wx:if="{{conditionTabStatus==3}}">
+            <view 
+              class="item {{condition.sort_type==item.value?'active':''}}" 
+              wx:key="{{index}}" 
+              wx:for="{{filterParams.filter_sort}}" 
+              bindtap='handleSort'
+               data-value="{{item.value}}"
+              >
+              <text>{{item.title}}</text>
+            </view>
+          </view>
+        </view>
+    </view> 
+    <view class="goodVillageWrapper">
+      <view 
+      wx:for="{{houseList}}" 
+      wx:key="{{index}}"
+      bindtap='goHouseDetail'
+      >
+        <goodVillage  
+          houseDetail="{{item}}" 
+          wx:if="{{houseList && houseList.length}}"
+          bind:myevent="onMyEvent" 
+          >
+        </goodVillage>
+      </view>
+    </view> 
+    
+

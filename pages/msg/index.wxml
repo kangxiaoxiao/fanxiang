@@ -1,0 +1,2 @@
+
+<view bindtap="openDetail">点我打开资讯</view>

@@ -1,0 +1,97 @@
+/* pages/components/hotVillage/hotVillage.wxss */
+.bannerImg{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.introWrapper{
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height:auto;
+  bottom:0;
+  
+}
+.introWrapper .introCon{
+  padding:0 30rpx 32rpx 30rpx;
+}
+.introWrapper .introCon .item{
+  padding-bottom:16rpx;
+}
+.introWrapper .introCon .VillageTitle{
+  font-size:28rpx;
+  color:#fff;
+  line-height:30rpx;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .reason{
+  font-size:24rpx;
+  color:#fff;
+  line-height:24rpx;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .tab{
+  display:flex;
+  flex-direction: row;
+  vertical-align: bottom;
+  font-size:0;
+  position:relative;
+  padding-bottom:0;
+
+}
+/* .introWrapper .introCon .tab   .tabItem{
+  display:inline-block;
+} */
+.introWrapper .introCon .tab   .tabItem,.introWrapper .introCon .priceWrapper .priceCon{
+  margin-right:20rpx;
+}
+.introWrapper .introCon .tab .ziying{
+  border:2rpx solid #33C2A6;
+  padding:0 20rpx;
+  border-radius:14rpx;
+  width:72rpx;
+  height:24rpx;
+  line-height:24rpx;
+  color:#33C2A6;
+  font-size:18rpx;
+  text-align:center;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .tab .address {
+  display: flex;
+  flex-direction: row;
+}
+.introWrapper .introCon .tab .address   .addressIcon{
+  display:block;
+  width:20rpx;
+  height:20rpx;
+  padding:4rpx 0;
+}
+.introWrapper .introCon .tab .address  .txt{
+  font-size:20rpx;
+  line-height:28rpx;
+  color:#CCB67A;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .tab  .hot{
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .priceWrapper {
+  padding-bottom:0;
+}
+.introWrapper .introCon .priceWrapper .priceCon{
+  display:inline-block;
+}
+.introWrapper .introCon .priceWrapper .priceCon  .priceLable,.introWrapper .introCon .priceWrapper .priceCon  .priceTxt{
+  display:inline-block;
+  color:#fff;
+  font-size:20rpx;
+  line-height:20rpx;
+  background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
+}
+.introWrapper .introCon .priceWrapper .priceCon .priceTxt .price{
+  font-size:26rpx;
+  color:#FF9600;
+  line-height:20rpx;
+}

@@ -1,0 +1,13 @@
+<!--pages/components/star/star.wxml-->
+<view class="starWrapper">
+  <view class="starTitle">{{starTitle}}:</view>
+  <view class="starCon">
+    <image 
+    wx:for="{{5}}" 
+    wx:key="{{index}}" 
+      src="{{(index+1)<=starNum?'/pages/img/icons/starLight.png':'/pages/img/icons/star.png'}}"
+      mode="aspectFill"
+      class="star"
+    ></image>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+<view class="findWrapper">
+  <view class="top">
+      <view class="li">
+        <view class= "item" >
+          <view 
+            class="left imgCon"
+            bindtap='handleTopBtnStatusChange'
+            data-status="0"
+            >
+            <image 
+              mode="aspectFill"
+              src="/pages/img/find/buyHouse.png">
+            </image>
+            <view class="txt">帮我租房／买房</view>
+          </view>
+        </view>
+        <view  class="item " >
+          <view class="right imgCon" 
+            bindtap='handleTopBtnStatusChange'
+            data-status="1"
+          >
+            <image 
+              mode="aspectFill"
+              src="/pages/img/find/rentHouse.png">
+            </image>
+            <view class="txt">帮我出租／出售</view>
+          </view>    
+        </view>
+      </view>
+      <view 
+        class="li imgCon"
+        bindtap='handleTopBtnStatusChange'
+        data-status="2"
+      >
+         <image 
+          mode="aspectFill"
+          src="/pages/img/find/makeMoney.png"
+          >
+         </image>
+         <view class="txt">做经纪人赚佣金</view>
+      </view>
+     
+  </view>
+  <view class="VillagelistWrapper">
+    <view class="modeTitle">
+      <view class="verticalLine"></view>
+      <view class="txt">发现最美村庄</view>
+    </view>
+    <view class="VillagelistCon" wx:if="{{villageList && villageList.length>0}}">
+        <view 
+        class="item"  
+        wx:for="{{villageList}}"
+        wx:key="index"
+        data-id="{{item.id}}"
+        bindtap='goVillageDetail'
+        >
+          <image 
+            src="{{item.banner_img}}" 
+            mode="aspectFill"
+            binderror="errLoadImg"
+            data-index='{{index}}'
+          >
+          </image> 
+          <view class="introWrapper">
+            <view class="introCon">
+               <view class="villageTitle">{{item.title}}</view>
+               <view class="des">{{item.des}}</view>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>

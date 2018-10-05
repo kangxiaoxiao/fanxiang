@@ -1,0 +1,56 @@
+<!--pages/villageDetail/villageDetail.wxml-->
+<view class="detailWrapper">
+  <view class="banner">
+    <swiper 
+      indicator-dots="{{false}}"
+      autoplay="{{true}}" 
+      style='height:470rpx'
+      circular
+      >
+      <block wx:for="{{villageDetail.img}}" wx:key="{{index}}">
+        <swiper-item class="swiperItem">
+          <image src="{{item}}" class="slide-image" mode="aspectFill" />
+          <view class="curNum">{{index+1}}/{{villageDetail.img.length}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="titleWrapper">
+    <view class="title">{{villageDetail.title}}</view>
+  </view>
+  <view class="itemWrapper">
+    <view class="item">
+      <view class="_title">概况描述</view>
+      <view class="con">{{villageDetail.des}}</view>
+    </view>
+    <view class="item">
+      <view class="_title">交通位置</view>
+      <view class="con">
+        <map 
+          id="map" 
+          longitude="{{villageDetail.lng}}" 
+          latitude="{{villageDetail.lat}}" 
+          scale="14" 
+          markers="{{markers}}" 
+          style="width: 100%; height: 400rpx;"
+          ></map>
+      </view>
+      <view class="address" >
+        <image src="/pages/img/icons/address.png" mode="aspectFill"></image>
+        <text>{{villageDetail.address}}</text>
+      </view>
+    </view>
+    <view class="item" >
+      <view class="_title">详细描述</view>
+      <view class="con">
+        <view wx:for="{{villageDetail.img_text}}" wx:key="{{index}}">
+          <text class="txt">{{item.des}}</text>
+          <image src="{{item.img}}" mode="widthFix" ></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <cover-view class="reserveBtn" bindTap="reserve">
+    预定
+  </cover-view>
+</view>

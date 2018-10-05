@@ -1,0 +1,68 @@
+<view class="buyHouseWrapper">
+  <view  class="formTitle">请输入您的房源</view>
+  <view class="formWrapper">
+    <form  bindsubmit="formSubmit" >
+      <view>
+          <picker 
+            mode="region"
+            bindchange="bindRegionChange" 
+            value="{{form.region}}"   
+            name="region"
+          >
+            <view class="item picker">
+                <view class="txt placeTxt" wx:if="{{!form.region}}">房源所在区域</view>
+                <view class="txt" wx:if="{{form.region}}">{{form.region}}</view>
+                <image  class="creatIcon" src="/pages/img/icons/cret.png"></image>
+            </view>
+          </picker>
+          <view class="item btns">
+              <input value="{{form.status}}" name="status" style="display:none"></input>
+              <view class="btnWrapper">
+                <view class="btnCon left">
+                  <button 
+                    class="btn {{form.status==1?'active':''}}"
+                    bindtap='handleStatusChange'
+                    data-status='1'
+                    >出租
+                  </button>
+                </view>
+              </view>
+              <view class="btnWrapper">
+                <view class="btnCon right">
+                  <button 
+                      class="btn {{form.status==2?'active':''}}"
+                      bindtap='handleStatusChange'
+                      data-status='2'
+                      >出售
+                    </button>
+                </view>
+              </view>  
+            </view>
+        </view>
+        <view class="item">
+          <view class="btnWrapper">
+           <view class="left">
+             <input placeholder-class="phcolor"  placeholder='房屋面积' name="floorSpace"></input>
+           </view>
+          </view>
+          <view class="btnWrapper">
+            <view class="right">
+              <input placeholder-class="phcolor"  placeholder="建筑面积" name="allSpace"></input>
+            </view>
+          </view>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor"  placeholder='您的期望价格' name="price"></input>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor"  placeholder='您的手机号' type="number"  name="tel"></input>
+        </view>
+        <view class="item">
+          <textarea placeholder-class="phcolor"  maxlength="-1" placeholder='其他要求' name="other"></textarea>
+        </view>
+        <button loading="{{loading}}" class="submitBtn"  formType="submit">提交</button>
+    </form>
+  </view>
+  
+  
+</view>

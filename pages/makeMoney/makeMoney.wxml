@@ -1,0 +1,95 @@
+<view class="makeMoneyWrapper">
+  <view class="formWrapper">
+    <form  bindsubmit="formSubmit" >
+        <view class="item">
+          <input placeholder-class="phcolor" placeholder='您的姓名' name="form.name"></input>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor" placeholder='您的手机号' name="form.tel"></input>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor" placeholder='您的身份证号' name="form.idCard"></input>
+        </view>
+        <view class="item">
+          <view class="imageWrapper" bindtap='loadImage' data-status="0">
+            <image 
+            mode="aspectFill"
+            src="{{form.picture1?form.picture1:'/pages/img/find/pic1.png'}}"></image>
+             <view class="loading"  wx:if="{{picStatus==='0'}}">
+                <view class="loadingCon">
+                  <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
+                  <text>上传中</text>
+               </view> 
+             </view>
+          </view>
+          <view class="imageWrapper" bindtap='loadImage' data-status="1">
+            <image 
+            mode="aspectFill"
+            src="{{form.picture2?form.picture2:'/pages/img/find/pic2.png'}}"></image>
+            <view class="loading" wx:if="{{picStatus==='1'}}">
+              <view class="loadingCon">
+                <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
+                <text>上传中</text>
+              </view> 
+            </view>
+          </view>
+          <view class="imageWrapper" bindtap='loadImage' data-status="2">
+            <image 
+            mode="aspectFill"
+            src="{{form.picture3?form.picture3:'/pages/img/find/pic3.png'}}"></image>
+             <view class="loading" wx:if="{{picStatus==='2'}}">
+               <view class="loadingCon">
+                  <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
+                  <text>上传中</text>
+               </view> 
+             </view>
+          </view>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor"  placeholder='开户行' name="form.openBank"></input>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor" placeholder='卡号' name="form.bankNum"></input>
+        </view>
+        <view class="item">
+          <input placeholder-class="phcolor" placeholder='开户人姓名' name="form.bankCardName"></input>
+        </view>
+        <view class="item">
+          <!-- <input placeholder='代理区域' name="form.area"></input> -->
+          <picker 
+            mode="region"
+            bindchange="bindRegionChange" 
+            value="{{form.region}}"   
+            name="region"
+          >
+            <view class="item picker">
+                <view class="txt placeTxt" wx:if="{{!form.region}}">请选择您的理想区域</view>
+                <view class="txt" wx:if="{{form.region}}">{{form.region}}</view>
+                <image  class="creatIcon" src="/pages/img/icons/cret.png"></image>
+            </view>
+          </picker>
+
+        </view>
+        
+        <button loading="{{loading}}" class="submitBtn"  formType="submit">提交</button>
+    </form>
+  </view>
+
+  <dialog 
+    title="做经纪人赚佣金" 
+    footer="加入我们" 
+    bind:okEvent="okEvent"
+    id="dialog"
+    >
+    <view slot="con">
+      <view class="conWrapper">
+         <view class="item">1.经纪人上传优质土地与农庄供应消息，平台经验证有效后，此农庄出租后将受益的5%作为经纪人的收益。 </view>
+        <view class="item">2.经纪人独立或在平台帮助下成功撮合交易，或土地类抵押贷款业务后收取佣金及服务费。</view>
+        <view class="item"> 3.随着公司新业务的展开而获取其他收入。</view>
+      </view>   
+    </view>
+  </dialog>  
+  
+  
+  
+</view>

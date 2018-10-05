@@ -1,0 +1,50 @@
+<!--pages/components/hotVillage/hotVillage.wxml-->
+<view class="hotVillage">
+      <swiper 
+        indicator-dots="{{fasle}}"
+        autoplay="{{false}}"
+        circular="{{true}}"
+        style='height:{{swiperHeight}}'
+        vertical
+        >
+        <block wx:for="{{villageList}}" wx:key="{{item.id}}">
+          <swiper-item 
+          class="swiperItem" 
+          style="background:url({{item.banner_img}}) 0 0 no-repeat;background-size:cover;">
+            <view class="introWrapper">
+                <view class="introCon">
+                   <view class="item VillageTitle">{{item.title}}</view>   
+                      <view class="item reason">推荐理由：{{item.recommend_reason}}</view>
+                      <view class="item tab">
+                        <view class="ziying tabItem">
+                          <text wx:if="{{item.type==1}}">自营</text>
+                          <text wx:if="{{item.type==2}}">已认证</text>
+                          <text wx:if="{{item.type==3}}">经纪人</text>
+                        </view>
+                        <view class="address tabItem">
+                          <image 
+                              class="addressIcon"
+                              mode="aspectFit"
+                              src="/pages/img/icons/address.png"></image>
+                              <text class="txt">{{item.address}}</text> 
+                        </view>
+                        <star class="hot"  starNum="{{item.hot}}" starTitle="热度"></star>
+                      </view>
+                      <view class="item priceWrapper">
+                          <view class="priceCon">
+                            <text class="priceLable">短租：</text>
+                            <text class="priceTxt">
+                              ¥<text class="price">{{item.short_price}}</text>/晚</text>
+                          </view>
+                          <view class="priceCon">
+                            <text class="priceLable">长租：</text>
+                            <text class="priceTxt">
+                              ¥<text class="price">{{item.long_price.price}}</text>/{{item.long_price.unit}}{{item.long_price.unit==1?'月':'年'}}</text>
+                          </view>
+                      </view>
+                </view>   
+            </view> 
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>

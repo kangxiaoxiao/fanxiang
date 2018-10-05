@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "做经纪人赚佣金",
+  "usingComponents": {
+    "dialog": "/pages/components/dialog/dialog"
+  }
+}

@@ -1,0 +1,26 @@
+<!--pages/login/login.wxml-->
+<view class="loginWrapper">
+   <view class="logoWrapper">
+    <image class="logo" src="/pages/img/login/logo.png" mode="aspectFill"></image>
+   </view>
+   <view class="formWrapper">
+     <form  bindsubmit="formSubmit" >
+       <view class="item">
+         <label>+86</label>
+         <input 
+           name="form.mobile" 
+           placeholder="请输入手机号码"
+           bindinput ="userTelInput"
+           ></input>
+       </view>
+       <view class="item">
+         <label>
+           <image src="/pages/img/login/msg.png" mode="aspectFill"></image>
+         </label>
+         <input bindinput ="codeInput" name="form.code" placeholder="请输入验证码"></input>
+         <button class="codeBtn" bindtap='getCode' loading="{{loading}}">获取验证码</button>
+       </view>
+       <button loading="{{loginLoading}}" class="loginBtn" formType="submit">登录</button>
+     </form>
+   </view>
+</view>

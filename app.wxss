@@ -1,0 +1,5 @@
+/**app.wxss**/
+page{
+  background:#F9F9F9;
+  height:100%;
+}

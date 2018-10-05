@@ -1,0 +1,71 @@
+/* pages/login/login.wxss */
+.loginWrapper{
+  height:100%;
+  background:#fff;
+}
+.logoWrapper{
+  text-align: center;
+}
+.loginWrapper .logo{
+  width:144rpx;
+  height:140rpx;
+  margin:82rpx auto 64rpx auto;
+}
+.loginWrapper .formWrapper{
+  margin:0 56rpx;
+}
+.loginWrapper .formWrapper .item{
+  border:2rpx solid #ddd;
+  display:flex;
+  flex-direction: row;
+  height:90rpx;
+  line-height:90rpx;
+  margin-bottom:24rpx;
+  align-items:center;
+  border-radius:10rpx;
+}
+.loginWrapper .formWrapper .item label{
+  flex: 0 0 100rpx;
+  width:100rpx;
+  text-align:center;
+  position:relative;
+  color:#AEAEAE;
+}
+.loginWrapper .formWrapper .item label image{
+  display:block;
+  width:42rpx;
+  height:32rpx;
+  margin:auto;
+}
+.loginWrapper .formWrapper .item  input{
+  flex:1;
+  display:inline-block;
+  height:90rpx;
+  line-height:90rpx;
+  font-size:28rpx;
+  color:#333;
+}
+.loginWrapper .formWrapper .item  .codeBtn{
+  flex: 0 0 214rpx;
+  width:214rpx;
+  text-align:center;
+  font-size:28rpx;
+  background:#F5F5F5;
+  color:#AEAEAE;
+  border-radius:0;
+  border:none;
+  height:90rpx;
+  line-height:90rpx;
+}
+.loginWrapper .formWrapper .item  .codeBtn::after{
+  border:none;
+}
+.loginBtn{
+  height:90rpx;
+  line-height:90rpx;
+  font-size:36rpx;
+  background:#33C2A6;
+  color:#fff;
+  margin-top:60rpx;
+ 
+}

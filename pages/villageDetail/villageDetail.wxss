@@ -1,0 +1,88 @@
+/* pages/villageDetail/villageDetail.wxss */
+.detailWrapper .banner .swiperItem image{
+   display:block;
+   width:100%;
+   height:100%;
+}
+.detailWrapper .banner .swiperItem  .curNum{
+  position:absolute;
+  bottom:22rpx;
+  right:28rpx;
+  font-size:20rpx;
+  line-height:20rpx;
+  color:#fff;
+}
+.titleWrapper{
+  margin:22rpx 0 50rpx 0;
+  padding:0 30rpx;
+}
+.titleWrapper .title{
+  font-size:28rpx;
+  line-height:30rpx;
+  color:#333;
+  font-weight: bold;
+}
+.itemWrapper{
+  padding:0 30rpx;
+}
+.itemWrapper .item{
+  margin-bottom:44rpx;
+}
+.itemWrapper .item  ._title{
+  position:relative;
+  font-size:32rpx;
+  line-height:34rpx;
+  color:#333;
+  margin-bottom:22rpx;
+}
+.itemWrapper .item  ._title::before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  display:inline-block;
+  margin:auto 14rpx auto 0;
+  width:6rpx;
+  height:34rpx;
+  border-radius:3rpx;
+  background:#33C2A6;
+}
+.itemWrapper .item .con{
+  overflow: hidden;
+  font-size:26rpx;
+  line-height:40rpx;
+  color:#5C5C5C;
+}
+.address image{
+  display:inline-block;
+  margin-right:10rpx;
+  width:20rpx;
+  height:24rpx;
+}
+.address text{
+  display:inline-block;
+  font-size:24rpx;
+  line-height:24rpx;
+  color:#CCB67A;
+}
+.itemWrapper .item .con text{
+  display:inline-block;
+}
+.itemWrapper .item .con image{
+  display:block;
+  width:100%;
+  margin:30rpx 0;
+}
+.reserveBtn{
+  position:fixed;
+  right:30rpx;
+  bottom:100rpx;
+  width:96rpx;
+  height:96rpx;
+  line-height:96rpx;
+  border-radius:50%;
+  font-size:26rpx;
+  text-align:center;
+  background:#33C2A6;  
+  color:#fff;
+}
