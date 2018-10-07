@@ -1,0 +1,162 @@
+/* pages/reserveDetail/reserveDetail.wxss */
+.reserveDetailWrapper {
+  height:100%;
+}
+.reserveDetailWrapper .houseMsgWrapper{
+  min-height:100%;
+}
+.reserveDetailWrapper .houseMsgWrapper .main{
+  padding-bottom:100rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon{
+   padding:30rpx;
+   border-bottom:2rpx solid #e5e5e5;
+   border-top:2rpx solid #e5e5e5;
+   display:flex;
+   background:#fff;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .left{
+  width:228rpx;
+  height:174rpx;
+  display:inline-block;
+  flex:0 0 228rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .left image{
+ 
+  width:100%;
+  height:100%;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .right{
+  flex:1;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .right .rightCon{
+  padding:0 26rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .right .rightCon ._title{
+  font-size:28rpx;
+  color:#333;
+  line-height:40rpx;
+  padding-bottom:40rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .right .rightCon .priceCon text{
+  font-size:24rpx;
+  color:#666;
+}
+.reserveDetailWrapper .houseMsgWrapper .houseMsgCon .right .rightCon .priceCon text.priceNum{
+  font-size:30rpx;
+  color:#FF9600;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper{
+  padding:30rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background:#fff;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item .timeLabel{
+  display:block;
+  text-align:center;
+  font-size:22rpx;
+  line-height:22rpx;
+  color:#999;
+  padding-bottom:20rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item{
+  padding:0 10rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item  .picker {
+  font-size:0;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item  .picker text{
+  vertical-align: bottom;
+  font-size:28rpx;
+  color:#33C2A6;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item  .picker text.week{
+  font-size:18rpx;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item.center .centerCon{
+  font-size:0;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item.center .centerCon  text{
+  font-size:20rpx;
+  color:#999;
+}
+.reserveDetailWrapper .houseMsgWrapper .timeWrapper .item.center .centerCon .dayNum{
+  display:inline-block;
+  padding:0 20rpx;
+  border-radius:15rpx;
+  border:2rpx solid #999;
+  color:#333;
+  font-size:20rpx;
+}
+.lisWrapper{
+  background:#fff;
+}
+.lisWrapper .item{
+  height:90rpx;
+  line-height:90rpx;
+  display:flex;
+  margin:0 30rpx;
+  border-bottom:2rpx solid #e5e5e5;
+}
+.lisWrapper .item {
+  display:flex;
+  font-size:24rpx;
+}
+.lisWrapper .item .left{
+  flex:0 0 122rpx;
+  width:122rpx;
+  padding-right:10rpx;
+}
+.lisWrapper .item input{
+  display:block;
+  width:100%;
+  height:90rpx;
+  line-height:90rpx;
+}
+.lisWrapper .item .right{
+  text-align:right;
+  flex:1;
+}
+.lisWrapper .item .right.inputWrapper{
+  text-align:left;
+}
+.lisWrapper .item .right image{
+  display:inline-block;
+  margin:auto 0;
+  width:32rpx;
+  height:32rpx;
+}
+.lisWrapper .item .right  text{
+  display:inline-block;
+  font-size:24rpx;
+  color:#333;
+  padding:0 30rpx;
+}
+
+.reserveDetailWrapper .btnWrapper{
+  height:100rpx;
+  margin-top:-100rpx;
+}
+.reserveDetailWrapper .btnWrapper .item{
+  display:inline-block;
+  width:50%;
+  text-align:center;
+  font-size:34rpx;
+   line-height:100rpx;
+
+}
+.reserveDetailWrapper .btnWrapper .item.left{
+  background:#e5e5e5;
+  color:#999;
+}
+.reserveDetailWrapper .btnWrapper .item.right{
+  background:#33C2A6;
+  color:#fff;
+}

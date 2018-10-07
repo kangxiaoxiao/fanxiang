@@ -1,0 +1,27 @@
+/* pages/aboutUs/aboutUs.wxss */
+.aboutUsWrapper{
+  height:100%;
+  background:#fff;
+  text-align: center;
+}
+.aboutUsWrapper .logo{
+  width:144rpx;
+  height:140rpx;
+  margin:82rpx auto 20rpx auto;
+}
+.aboutUsWrapper .con .version{
+  margin-bottom:50rpx;
+}
+.aboutUsWrapper .con .version text{
+  font-size:26rpx;
+  line-height:20rpx;
+  color:#888;
+}
+.aboutUsWrapper .con .dsc{
+  margin:0 94rpx;
+}
+.aboutUsWrapper .con .dsc text{
+  font-size:24rpx;
+  line-height:40rpx;
+  color:#333;
+}

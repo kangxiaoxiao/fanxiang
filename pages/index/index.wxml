@@ -52,11 +52,13 @@
         village-list="{{villageList}}" 
         swiper-height="{{Height}}"
         wx:if="{{villageList && villageList.length}}"
+        bind:myevent="goVillageDetal"
       >
     </hotVillage> 
   </view>
 
-   <view wx:if="{{topBarStatus!=0}}" class="conditionWrapper {{conditionTabStatus?'expand':''}}" >
+  <view wx:if="{{topBarStatus!=0}}">
+     <view  class="conditionWrapper {{conditionTabStatus?'expand':''}}" >
         <view class="conditionTab">
           <view  
               bindtap="tapName"
@@ -126,17 +128,15 @@
       <view 
       wx:for="{{houseList}}" 
       wx:key="{{index}}"
+      id="{{item.id}}"
       bindtap='goHouseDetail'
       >
         <goodVillage  
           houseDetail="{{item}}" 
           wx:if="{{houseList && houseList.length}}"
-          bind:myevent="onMyEvent" 
           >
         </goodVillage>
       </view>
     </view> 
-
-
-  
+  </view>  
 </view>

@@ -7,10 +7,16 @@
         style='height:{{swiperHeight}}'
         vertical
         >
-        <block wx:for="{{villageList}}" wx:key="{{item.id}}">
+        <block 
+          wx:for="{{villageList}}" 
+          wx:key="{{item.id}}"  
+          >
           <swiper-item 
           class="swiperItem" 
-          style="background:url({{item.banner_img}}) 0 0 no-repeat;background-size:cover;">
+          style="background:url({{item.banner_img}}) 0 0 no-repeat;background-size:cover;"
+          bindtap="onTap"
+          id="{{item.id}}"
+          >
             <view class="introWrapper">
                 <view class="introCon">
                    <view class="item VillageTitle">{{item.title}}</view>   

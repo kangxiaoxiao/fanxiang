@@ -1,0 +1,119 @@
+<!--pages/reserveDetail/reserveDetail.wxml-->
+<view class="reserveDetailWrapper">
+ <view class="houseMsgWrapper">
+   <view class="main">
+     <view class="houseMsgCon">
+     <view class="left">
+       <image src="{{houseDetail.house_img[0]}}"></image>
+     </view>
+     <view class="right">
+        <view class="rightCon">
+          <view class="_title">{{houseDetail.title}}</view>
+          <view class="priceCon">
+            <text >¥</text>
+            <text class="priceNum">{{houseDetail.short_price}}</text>
+            <text>/晚</text>
+          </view>
+        </view>
+     </view>
+   </view>
+   <view class="timeWrapper">
+     <view class="item left">
+       <text class="timeLabel">入住时间</text>
+        <picker 
+          mode="date" 
+          value="{{startDate}}" 
+          bindchange="bindStartDateChange"
+          >
+          <view class="picker">
+            <text>{{startDate}}</text>
+            <text class="week">{{startDateDay}}</text>
+          </view>
+        </picker>
+     </view>
+     <view class="item center">
+       <view class="centerCon">
+         <text>—</text>
+         <text class="dayNum">{{dayNum}}晚</text>
+         <text>—</text>
+       </view>
+     </view>
+     <view class="item right">
+       <view class="rightCon">
+         <text class="timeLabel">离开时间</text>
+         <picker 
+          mode="date" 
+          value="{{endDate}}" 
+          bindchange="bindEndDateChange"
+          >
+          <view class="picker">
+            <text>{{endDate}}</text>
+            <text class="week">{{endDateDay}}</text>
+          </view>
+        </picker>
+       </view>
+     </view>
+   </view>
+   <view class="lisWrapper">
+      <view class="item">
+        <view class="left">预定套数</view>
+        <view class="right">
+          <view class="rightCon">
+            <image 
+              bindtap="handleReserveNum"
+              data-type="add"
+              src="/pages/img/icons/add.png" 
+              mode="aspectFill"></image>
+            <text>{{reserveNum}}套</text>
+            <image 
+             src="/pages/img/icons/reduce.png" 
+             mode="aspectFill"
+             bindtap="handleReserveNum"
+             data-type="reduce"
+             ></image>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">入住人数</view>
+        <view class="right">
+          <view class="rightCon">
+            <image 
+              bindtap="handlePersonNUm"
+              data-type="add"
+              src="/pages/img/icons/add.png" 
+              mode="aspectFill"></image>
+            <text>{{reservePersonNum}}人</text>
+            <image 
+              bindtap="handlePersonNUm"
+              data-type="reduce"
+              src="/pages/img/icons/reduce.png" 
+              mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">预约人姓名</view>
+        <view class="right inputWrapper">
+          <view class="rightCon">
+            <input data-name='reserveName' bindinput="handleBindInput"></input>
+          </view>
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">您的手机号</view>
+        <view class="right inputWrapper">
+          <view class="rightCon">
+            <input data-name='reserveTel' bindinput="handleBindInput"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+   </view>   
+ </view> 
+ <view class="btnWrapper">
+        <text class="item left">总价：{{total||0}}元</text>
+        <text class="item right" bindtap='submit'>立即预定</text>
+    </view>
+ 
+</view>

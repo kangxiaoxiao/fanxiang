@@ -240,6 +240,16 @@ Page({
   },
   //跳转到详情
   goHouseDetail: function (e) {
-    console.log("跳转到详情",e.detail) // 自定义组件触发事件时提供的detail对象
+    let houseId = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/houseDetail/houseDetail?id=' + houseId,
+    })
   },
+  goVillageDetal:function(e){
+    console.log("跳转到详情",e.detail);
+    let houseId = e.detail.id;
+    wx.navigateTo({
+      url: '/pages/houseDetail/houseDetail?id=' + houseId,
+    })
+  }
 })

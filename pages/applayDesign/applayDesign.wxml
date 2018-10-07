@@ -1,0 +1,62 @@
+<!--pages/applayDesign/applayDesign.wxml-->
+
+<view class="dialogWrapper" >
+  <view class="dialogCon">
+    <view class="content">
+      <!-- <view class="dialogTitle">{{formTitle}}</view> -->
+      <view class="detail">
+        <view class="conWrapper">
+         <form>
+            <view class="inputItem">
+              <input 
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.name"
+                placeholder='姓名'
+              ></input>
+            </view> 
+            <view class="inputItem">
+              <input 
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.mobile"
+                placeholder='手机号'
+              ></input>
+            </view> 
+            <view class="inputItem">
+              <!-- <input 
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.look_time"
+                placeholder='洽谈日期'
+              ></input> -->
+              <picker 
+                mode = "date" 
+                bindchange="bindInput" 
+                data-name="applayDesign.look_time"
+                value="{{applayDesign.look_time}}"
+              >
+              <view class="picker">
+                 {{applayDesign.look_time}}
+              </view>
+              </picker>
+            </view> 
+            <view class="inputItem">
+              <textarea
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.other"
+                placeholder="其他要求"
+              />
+            </view> 
+         </form>
+      </view> 
+      </view>
+      <view class="dialogFooter">
+        <button plain bindtap="submit">提交</button>
+      </view>
+    </view> 
+  </view>
+</view>
+
+

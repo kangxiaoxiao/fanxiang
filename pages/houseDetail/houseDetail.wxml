@@ -1,2 +1,289 @@
 <!--pages/houseDetail/houseDetail.wxml-->
-<text>pages/houseDetail/houseDetail.wxml</text>
+<view class="detailWrapper">
+  <view class="banner">
+    <swiper 
+      indicator-dots="{{false}}"
+      autoplay="{{true}}" 
+      style='height:470rpx'
+      circular
+      >
+      <block wx:for="{{houseDetail.house_img}}" wx:key="{{index}}">
+        <swiper-item >
+        <view class="swiperItem">
+            <view class="imageWrapper">
+            <image class="bannerImg" src="{{item}}"  mode="aspectFill" />
+            <view class="curNum">{{index+1}}/{{houseDetail.house_img.length}}</view>
+            <view class="imgOverWrapper">
+              <image class="shadow topShadow"  
+                src="/pages/img/icons/topShadow.png"
+                mode="aspectFill"
+                >
+              </image>
+              <image class="shadow bottomShadow"  
+                src="/pages/img/icons/bottomShadow.png"
+                mode="aspectFill"
+                >
+              </image>
+              <view class="topTxt">
+                <view class="typeWrapper">
+                  <text wx:if="{{houseDetail.type==1}}">自营</text>
+                  <text wx:if="{{houseDetail.type==2}}">经纪人</text>
+                  <text wx:if="{{houseDetail.type==3}}">房东</text>
+                </view>
+                <view class="starWrapper">
+                  <star class="hot"  starNum="{{houseDetail.hot}}" starTitle="热度"></star>
+                </view>
+              </view>   
+            </view>
+          </view>
+        </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="dscWrapper">
+    <view class="item _title">
+      <text class="txt">{{houseDetail.title}}</text>
+      <view class="favirate" 
+      data-status="{{houseDetail.is_collection}}"
+      bindtap='handleFaviorite'
+      >
+        <image 
+        mode="aspectFill"
+        src="{{houseDetail.is_collection?'/pages/img/icons/favoriteLight.png':'/pages/img/icons/favorite.png'}}"></image>
+      </view>
+    </view>
+    <view class="item tagWrapper">
+      <view 
+        class="tagItem"
+        wx:for="{{houseDetail.label}}" 
+        wx:key="{{index}}">
+        {{item}}
+      </view>
+    </view>
+    <view class="item priceWrapper">
+      <view class="priceItem">
+        <label>短租：</label>
+        <view class="priceNumWrapper">
+            <text class="_type">¥</text>
+            <text class="priceNUm">{{houseDetail.short_price}}</text>
+            <text>/晚</text>
+        </view>
+      </view>
+      <view class="priceItem">
+        <label>长租：</label>
+        <view class="priceNumWrapper">
+          <view class="longPriceItem" 
+            wx:for="{{houseDetail.long_price}}"
+            wx:key="{{index}}"
+            >
+             <text class="_type">¥</text>
+             <text class="priceNUm">{{item.priceNum}}</text>
+             <text>/{{item.priceUnit||''}}</text>
+          </view> 
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tabWrapper">
+    <view class="tabHeader">
+      <view 
+        class="tabHeadItem {{tabStatus==1?'active':''}}" 
+        data-status="1"  
+        bindtap='changeTab'>
+        基本信息
+      </view>
+      <view 
+        class="tabHeadItem {{tabStatus==2?'active':''}}" 
+        data-status="2"  
+        bindtap='changeTab'>
+        选项二
+      </view>
+      <view 
+        class="tabHeadItem {{tabStatus==3?'active':''}}" 
+        data-status="3"  
+        bindtap='changeTab'>
+        选项三
+      </view>
+    </view>
+    <view class="tabConWrapper">
+       <view class="tabCon" wx:if="{{tabStatus==1}}">
+           <view class="item" wx:if="{{houseDetail.house_area}}">
+            房屋面积：{{houseDetail.house_area}}㎡
+           </view>
+           <view class="item" wx:if="{{houseDetail.land_nature}}">
+            土地性质：{{houseDetail.land_nature}}
+           </view>
+           <view class="item" wx:if="{{houseDetail.service_life}}">
+             使用年限：{{houseDetail.service_life}}年
+           </view>
+       </view>
+       <view class="tabCon" wx:if="{{tabStatus==2}}">
+         <view class="item" wx:if="{{houseDetail.people_total}}">
+           宜住人数：{{houseDetail.people_total}}人
+         </view>
+       </view>
+       <view class="tabCon" wx:if="{{tabStatus==3}}">
+         <view class="item" wx:if="{{houseDetail.bed_total}}">
+          床：{{houseDetail.bed_total}}张
+         </view>
+       </view>
+    </view>
+  </view>
+  <view class="itemWrapper">
+    <view class="item" >
+      <view class="_title">房东介绍</view>
+      <view class="con">
+        <view >
+          <text class="txt">{{houseDetail.landlord_introduce}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="item" >
+      <view class="_title">房源描述</view>
+      <view class="con">
+        <view >
+          <text class="txt">{{houseDetail.des}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="item" wx:if="{{houseDetail.design_guide && houseDetail.design_guide.length}}">
+      <view class="_title">设计指南</view>
+      <view class="con">
+        <view >
+          <text class="msgTxt">未来设计仅供参考</text>
+        </view>
+         <swiper 
+          indicator-dots="{{false}}"
+          autoplay="{{true}}" 
+          style='height:430rpx'
+          circular
+          >
+          <block wx:for="{{houseDetail.design_guide}}" wx:key="{{index}}">
+            <swiper-item class="swiperItem">
+              <image src="{{item}}" class="slide-image" mode="aspectFill" />
+              <view class="curNum">{{index+1}}/{{houseDetail.design_guide.length}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+    <view class="item">
+      <view class="_title">房源位置</view>
+      <view class="con">
+        <map 
+          id="map" 
+          longitude="{{houseDetail.lng}}" 
+          latitude="{{houseDetail.lat}}" 
+          scale="14" 
+          markers="{{markers}}" 
+          style="width: 100%; height: 400rpx;"
+          ></map>
+      </view>
+      <view class="address" >
+        <image src="/pages/img/icons/address.png" mode="aspectFill"></image>
+        <text>{{houseDetail.address}}</text>
+      </view>
+    </view>
+    <view class="item" >
+      <view class="_title">房源设施</view>
+      <view class="con">
+        <view class="tagWrapper">
+          <view class="tag" wx:for="{{houseDetail.facilities}}" wx:key="{{index}}">
+            <!-- <image src="{{item.img}}" mode="widthFix" ></image> -->
+            <text>{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--周边配套先不佳-->
+    <!-- <view class="item" >
+      <view class="_title">周边配套</view>
+      <view class="con">
+        <view wx:for="{{houseDetail.facilities}}" wx:key="{{index}}">
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view> -->
+    <view class="item" >
+      <view class="_title">预定规则</view>
+      <view class="con">
+        <view wx:for="{{houseDetail.book_rule}}" wx:key="{{index}}">
+          <text class="txt">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <cover-view class="btnWrapper" >
+     <cover-view class="btnItem leftItem" bindtap="applyDesign" data-status="1">
+      <cover-image class="icon" src="/pages/img/icons/design.png" mode="aspectFill"></cover-image>
+      <cover-view class="txt" >申请设计</cover-view>
+     </cover-view>
+     <cover-view class="btnItem centerItem" bindtap="applyDesign" data-status="2">
+      <cover-image class="icon" src="/pages/img/icons/house.png" mode="aspectFill"></cover-image>
+      <cover-view class="txt">
+        <cover-view class="_txt">我要看房</cover-view>
+        <cover-view class="msg">(适合长租)</cover-view>
+      </cover-view>
+     </cover-view>
+     <cover-view 
+       class="btnItem rightItem"
+       bindtap='goReserveDetail'
+       >
+       立即预定
+     </cover-view>
+  </cover-view>
+
+  <!-- <dialog 
+    title="{{applayDesign.title}}" 
+    footer="提交" 
+    bind:okEvent="okEvent"
+    id="dialog"
+    class="dialogWrapper"
+    >
+    <view slot="con">
+      <view class="conWrapper">
+         <form>
+            <view class="inputItem">
+              <input 
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.name"
+                placeholder='姓名'
+              ></input>
+            </view> 
+            <view class="inputItem">
+              <input 
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.mobile"
+                placeholder='手机号'
+              ></input>
+            </view> 
+            <view class="inputItem">
+              <picker 
+                mode = "date" 
+                bindchange="bindInput" 
+                data-name="applayDesign.look_time"
+                value="{{applayDesign.look_time}}"
+              >
+              <view class="picker">
+                 {{applayDesign.look_time}}
+              </view>
+              </picker>
+            </view> 
+            <view class="inputItem">
+              <textarea
+                placeholder-class='holder' 
+                bindinput="bindInput"
+                data-name="applayDesign.other"
+                placeholder="其他要求"
+              />
+            </view> 
+         </form>
+      </view>   
+    </view>
+  </dialog>   -->
+
+</view>
+

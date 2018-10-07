@@ -9,8 +9,17 @@
       >
       <block wx:for="{{villageDetail.img}}" wx:key="{{index}}">
         <swiper-item class="swiperItem">
-          <image src="{{item}}" class="slide-image" mode="aspectFill" />
-          <view class="curNum">{{index+1}}/{{villageDetail.img.length}}</view>
+          <view class="swiperCon">
+            <image src="{{item}}" class="slide-image" mode="aspectFill" />
+            <view class="curNum">{{index+1}}/{{villageDetail.img.length}}</view>
+          </view>
+           <view class="shadow">
+             <image class="shadow bottomShadow"  
+                src="/pages/img/icons/bottomShadow.png"
+                mode="aspectFill"
+                >
+              </image>
+           </view>
         </swiper-item>
       </block>
     </swiper>
@@ -50,7 +59,10 @@
       </view>
     </view>
   </view>
-  <cover-view class="reserveBtn" bindTap="reserve">
-    预定
+  <cover-view class="reserveBtn" bindtap="reserve">
+   <cover-view class="txtWrapper">
+     <cover-view class='txt'>立即</cover-view>
+     <cover-view class="txt">预定</cover-view>
+   </cover-view> 
   </cover-view>
 </view>

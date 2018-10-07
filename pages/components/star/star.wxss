@@ -2,6 +2,10 @@
 .starWrapper{
   display:flex;
   flex-direction:row;
+  align-items:center;
+  padding:0 10rpx;
+  border-radius:6rpx;
+
 }
 .starWrapper .starTitle{
   line-height:28rpx;

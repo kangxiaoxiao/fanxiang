@@ -1,1 +1,24 @@
 /* pages/msg/index.wxss */
+.newsListWrapper .newsItem{
+  display:flex;
+  flex-direction: row;
+  border-bottom:2rpx solid #E5E5E5;
+  padding:42rpx 30rpx;
+}
+.newsListWrapper .newsItem .left{
+  flex:1;
+}
+.newsListWrapper .newsItem .left text{
+  font-size:30rpx;
+  line-height:42rpx;
+  color:#333;
+}
+.newsListWrapper .newsItem .right{
+  width:228rpx;
+  height:172rpx;
+}
+.newsListWrapper .newsItem .right image{
+  display:block;
+  width:100%;
+  height:100%;
+}

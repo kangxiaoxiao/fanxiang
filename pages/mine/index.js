@@ -3,6 +3,7 @@ const app = getApp();
 Page({
   data: {
     token:"",
+    phoneNum:"4008888"
   },
   onShow:function(){
     this.init();
@@ -25,6 +26,46 @@ Page({
         })
       }
     });
+  },
+  call:function(){
+    let _this=this;
+    wx.makePhoneCall({
+      phoneNumber: _this.data.phoneNum,
+      success:function(){
+        
+      }
+    })
+  },
+  goCollectList:function(){
+    wx.navigateTo({
+      url: '/pages/collectList/collectList',
+    })
+  },
+  aboutUs:function(){
+    wx.navigateTo({
+      url: '/pages/aboutUs/aboutUs',
+    })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '凡乡',
+      path: '/pages/index/index',
+      imageUrl:"/pages/img/mine/defaultImg.jpg",
+      success: function (res) {
+        console.log(res.shareTickets[0])
+        // console.log
+        wx.getShareInfo({
+          shareTicket: res.shareTickets[0],
+          success: function (res) { console.log(res) },
+          fail: function (res) { console.log(res) },
+          complete: function (res) { console.log(res) }
+        })
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    }
   },
   login:function(e){
    wx.navigateTo({

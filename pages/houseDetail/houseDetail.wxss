@@ -1,1 +1,348 @@
 /* pages/houseDetail/houseDetail.wxss */
+.detailWrapper{
+  margin-bottom:120rpx;
+  background:#fff;
+}
+.swiperItem{
+  overflow: hidden;
+}
+.detailWrapper .banner .swiperItem .bannerImg{
+   display:block;
+   width:100%;
+   height:472rpx;
+}
+.detailWrapper .banner .swiperItem  .curNum{
+  position:absolute;
+  bottom:22rpx;
+  right:28rpx;
+  font-size:20rpx;
+  line-height:20rpx;
+  color:#fff;
+  padding:5rpx 10rpx;
+  border-radius:4rpx;
+  z-index:2;
+}
+.titleWrapper{
+  margin:22rpx 0 50rpx 0;
+  padding:0 30rpx;
+}
+.titleWrapper .title{
+  font-size:28rpx;
+  line-height:30rpx;
+  color:#333;
+  font-weight: bold;
+}
+.itemWrapper{
+  padding:0 30rpx;
+}
+.itemWrapper .item{
+  margin-bottom:44rpx;
+}
+._title{
+  display:flex;
+  position:relative;
+  font-size:28rpx;
+  color:#333;
+  margin:22rpx 0;
+  padding-left:14rpx;
+}
+._title .txt{
+  display:block;
+  flex:1;
+}
+._title .favirate{
+  flex: 0 28rpx;
+  width:28rpx;
+}
+._title .favirate image{
+  width:30rpx;
+  height:28rpx;
+}
+.itemWrapper .item  ._title::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:50%;
+  margin-top:-14rpx;
+  display:inline-block;
+  width:6rpx;
+  height:28rpx;
+  border-radius:3rpx;
+  background:#33C2A6;
+}
+.itemWrapper .item .con{
+  overflow: hidden;
+  font-size:26rpx;
+  line-height:40rpx;
+  color:#5C5C5C;
+}
+.itemWrapper .item .con .tagWrapper{
+  margin:10rpx 66rpx 0 66rpx;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+.itemWrapper .item .con .tag{
+  display:inline-block;
+  width:136rpx;
+}
+.address image{
+  display:inline-block;
+  margin-right:10rpx;
+  width:20rpx;
+  height:24rpx;
+}
+.address text{
+  display:inline-block;
+  font-size:24rpx;
+  line-height:24rpx;
+  color:#CCB67A;
+}
+.itemWrapper .item .con text{
+  display:inline-block;
+}
+.itemWrapper .item .con image{
+  display:block;
+  width:100%;
+  margin:30rpx 0;
+}
+.btnWrapper{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100rpx; 
+  display:flex;
+}
+.btnWrapper .btnItem{
+  border-top:2rpx solid #ECECEC;
+  text-align:center; 
+  border-left:0;
+  border-right:0;
+}
+.btnWrapper .btnItem::after{
+  border:none;
+}
+.btnWrapper .btnItem .icon{
+  display:block;
+  margin:18rpx auto 10rpx auto;
+  width:36rpx;
+  height:36rpx;
+}
+.btnWrapper .btnItem.centerItem{
+  border-left:2rpx solid #ECECEC;
+}
+.btnWrapper .btnItem.rightItem{
+  flex:0 0 364rpx;
+  width:364rpx;
+  line-height:100rpx;
+  font-size:34rpx;
+  color:#fff;
+  background:#33C2A6;
+}
+.btnWrapper .btnItem.leftItem,.btnWrapper .btnItem.centerItem{
+  flex:1;
+  background:#fff;
+}
+.btnWrapper .btnItem.leftItem,.btnWrapper .btnItem.centerItem{
+  font-size:0;
+}
+.btnWrapper .btnItem.leftItem .txt,.btnWrapper .btnItem.centerItem .txt{
+  font-size:20rpx;
+  color:#666;
+  vertical-align: bottom;
+  display:inline-block;
+}
+.btnWrapper .btnItem.centerItem .txt ._txt{
+  display:inline-block;
+}
+.btnWrapper .btnItem .msg{
+  display:inline-block;
+  color:#e5e5e5;
+  font-size:18rpx;
+}  
+.dialogWrapper .inputItem{
+  border-radius:6rpx;
+  background:#F5F5F5;
+  border:2rpx solid #CCCCCC;
+  margin-bottom:20rpx;
+  padding:0 16rpx;
+}
+.dialogWrapper input,.dialogWrapper textarea{
+  display:block;
+  width:100%;
+  color:#333;
+  font-size:28rpx;
+}
+.dialogWrapper textarea{
+  line-height:26rpx;
+  padding:16rpx 0;
+  height:216rpx;
+}
+.dialogWrapper input,.dialogWrapper .picker{
+  height:74rpx;
+  line-height:74rpx
+}
+.dialogWrapper .holder{
+  color:#AEAEAE;
+}
+.imageWrapper{
+  position:relative;
+  overflow:hidden;
+}
+ .imgOverWrapper{
+   position:absolute;
+   left:0;
+   right:0;
+   top:0;
+   bottom:0;
+   width:100%;
+   height:100%;
+}
+.imgOverWrapper .shadow{
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height:112rpx;
+  z-index:1
+}
+.imgOverWrapper .topShadow{
+  top:0;
+}
+.imgOverWrapper .bottomShadow{
+  bottom:0;
+}
+.imgOverWrapper .topTxt{
+  z-index:2;
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  height:auto;
+}
+.imgOverWrapper .typeWrapper{
+  display:inline-block;
+  width:88rpx;
+  height:34rpx;
+  line-height:34rpx;
+  border-radius:12rpx;
+  background:#33C2A6;
+  margin:24rpx 0 0 30rpx
+}
+.imgOverWrapper .typeWrapper text{
+  display:block;
+  text-align: center;
+  font-size:24rpx;
+  color:#fff;
+}
+.imgOverWrapper .starWrapper{
+  float:right;
+  margin:28rpx 22rpx 0 0 ;
+}
+.imgOverWrapper .starWrapper .starTitle{
+  margin:auto 0;
+}
+
+.dscWrapper {
+  overflow: hidden;
+  padding:0 30rpx;
+  margin-bottom:50rpx;
+}
+.dscWrapper .item{
+  margin-bottom:16rpx;
+  font-size:0;
+}
+.dscWrapper ._title{ 
+  font-size:28rpx;
+  line-height:30rpx;
+  color:#333;
+}
+.dscWrapper .tagWrapper .tagItem{
+  display:inline-block;
+  padding:8rpx 14rpx;
+  font-size:20rpx;
+  line-height:34rpx;
+  border-radius:16rpx;
+  background:#F5F5F5;
+  color:#999;
+}
+.dscWrapper .tagWrapper .tagItem+ .tagItem{
+  margin-left:14rpx;
+}
+.dscWrapper .addressWrapper image{
+  display:inline-block;
+  width:20rpx;
+  height:22rpx;
+  margin-right:10rpx;
+}
+.dscWrapper .addressWrapper text{
+  display:inline-block;
+  font-size:20rpx;
+  line-height:20rpx;
+  color:#CCB67A;
+}
+.dscWrapper .priceWrapper{
+  font-size:0;
+}
+.dscWrapper .priceWrapper .priceItem{
+  font-size:0;
+  display:inline-block;
+  margin-right:20rpx;
+}
+.dscWrapper .priceWrapper .priceItem label{
+  display:inline-block;
+  font-size:20rpx;
+  line-height:22rpx;
+  color:#666;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper{
+  display:inline-block;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper text{
+  font-size:20rpx;
+  color:#666;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper text._type{
+  font-size:18rpx;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper text.priceNUm{
+  font-size:26rpx;
+  color:#FF9600;
+}
+/*tab*/
+.tabWrapper{
+  margin:0 30rpx  20rpx 30rpx;
+}
+.tabWrapper .tabHeader {
+  /* display:flex;
+  flex-direction: row;
+  justify-content:space-around; */
+}
+.tabWrapper .tabHeader .tabHeadItem{
+  border-radius:6rpx;
+  display:inline-block;
+  text-align:center;
+  padding:24rpx 62rpx;
+  font-size:26rpx;
+  color:#999;
+}
+.tabWrapper .tabHeader .tabHeadItem.active{
+  background:rgba(229,229,229,0.2);
+  color:#33C2A6;
+}
+.tabWrapper .tabConWrapper{
+  background:rgba(229,229,229,0.2);
+}
+.tabWrapper .tabConWrapper .tabCon{
+  padding:34rpx;
+  position:relative;
+}
+.tabWrapper .tabConWrapper .tabCon .item{
+  display:inline-block;
+  width:50%;
+  font-size:24rpx;
+  color:#333;
+}
+  

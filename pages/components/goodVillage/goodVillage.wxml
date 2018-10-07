@@ -1,8 +1,6 @@
 <view class="houseListCon">
   <view 
     class="houseItem"
-    id="{{houseDetail.id}}"
-    catchtap="onTap"
   >
     <view class="imageWrapper">
       <image  src="{{houseDetail.banner_img}}" mode="aspectFill"></image>

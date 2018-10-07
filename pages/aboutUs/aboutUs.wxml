@@ -1,0 +1,16 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<!--pages/login/login.wxml-->
+<view class="aboutUsWrapper">
+   <view class="aboutUsCon">
+    <image class="logo" src="/pages/img/login/logo.png" mode="aspectFill"></image>
+   </view>
+   <view class="con">
+     <view class="version">
+       <text>version:{{version}}</text>
+     </view>
+     <view class="dsc">
+       <text>海鲜虾螃蟹等等虽然不是活的，但肉也很多，螃蟹都不空。牛肉也非常好吃。还有一些熟食，水果也非常多，而且都很新鲜，味道也不错，他们家的丸子里有一个小的豆腐丸子，超级好吃。再就是饮料也非常多，还有鸡尾酒，红酒，都非常不错。以后还会去。</text>
+     </view>
+   </view>
+</view>
+

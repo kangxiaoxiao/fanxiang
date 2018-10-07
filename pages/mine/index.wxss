@@ -90,6 +90,10 @@
   padding:0 42rpx;
   border-bottom:2rpx solid #f5f5f5;
   align-items:center;
+  background:#fff;
+}
+.liWrapper .item::after{
+  border:none;
 }
 .liWrapper .item .left{
   display:flex;

@@ -148,6 +148,7 @@ Page({
               _this.setData({
                 [openid]:res.data.data
               });
+              wx.setStorageSync("openid", res.data.data);
               let loginParams=_this.data.form;
               let loginUrl = api.headUrl + "/api/user/quickLogin";
               console.log("快捷登录的参数", loginParams);

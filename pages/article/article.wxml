@@ -1,2 +1,2 @@
 <!--pages/article/article.wxml-->
-<web-view src="https://mp.weixin.qq.com/s/8fNGU9T7woL8Ae62yi9_OA"></web-view>
+<web-view src="{{urlLink}}"></web-view>

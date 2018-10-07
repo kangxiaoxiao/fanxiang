@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "房源详情",
+  "usingComponents": {
+    "dialog": "/pages/components/dialog/dialog",
+    "star": "/pages/components/star/star"
+  }
+}

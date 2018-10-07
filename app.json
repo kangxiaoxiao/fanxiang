@@ -11,7 +11,11 @@
     "pages/villageDetail/villageDetail",
     "pages/article/article",
     "pages/houseDetail/houseDetail",
-    "pages/goodHose/goodHouse"
+    "pages/goodHose/goodHouse",
+    "pages/aboutUs/aboutUs",
+    "pages/reserveDetail/reserveDetail",
+    "pages/collectList/collectList",
+    "pages/applayDesign/applayDesign"
   ],
   "window": {
     "backgroundTextStyle": "light",

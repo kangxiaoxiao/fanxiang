@@ -1,12 +1,14 @@
 // pages/villageDetail/villageDetail.js
 const app = getApp();
 var api = require('../../utils/api.js');
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    houseId:"",
     villageDetail:{},
     // controls: [{
     //   id: 1,
@@ -34,8 +36,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
      console.log("options",options);
     let id = options.id;
+    this.setData({
+      houseId:id
+    });
      this.getVillageDetail(id);
   },
   getVillageDetail(id){
@@ -70,6 +78,11 @@ Page({
   },
   reserve:function(){
     console.log("立即预定");
+    let _this=this;
+    util.checkLogin();
+    wx.navigateTo({
+      url: '/pages/reserveDetail/reserveDetail?id=' + _this.data.houseId,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

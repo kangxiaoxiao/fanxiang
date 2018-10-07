@@ -1,2 +1,17 @@
-
-<view bindtap="openDetail">点我打开资讯</view>
+<view class="newsListWrapper">
+  <view 
+    wx:if="{{newsList && newsList.length}}"
+    class="newsItem"  
+    wx:for="{{newsList}}" 
+    wx:key="{{index}}"
+    bindtap="goNewsDetail"
+    data-url="{{item.url}}"
+    >
+    <view class="left">
+      <text>{{item.title}}</text>
+    </view>
+    <view class="right">
+      <image src="{{item.banner_img}}" mode="aspectFill" ></image>
+    </view>
+  </view>
+</view>

@@ -74,7 +74,6 @@
         <goodVillage  
           houseDetail="{{item}}" 
           wx:if="{{houseList && houseList.length}}"
-          bind:myevent="onMyEvent" 
           >
         </goodVillage>
       </view>
