@@ -41,13 +41,13 @@ Page({
       },
       success: function (res) {
         if (res.data.code == 200) {
-          wx.navigateBack({
-            delta:1
-          })
           wx.showToast({
             title: '提交成功',
             success: function () {
               setTimeout(function () {
+                wx.navigateBack({
+                  delta: 1
+                })
                 wx.hideToast();
               }, 3000)
             }

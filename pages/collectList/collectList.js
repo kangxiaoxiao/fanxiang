@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-      collectList:[]
+      collectList:[],
+      deletHouseId:""
   },
 
   /**
@@ -27,8 +28,16 @@ Page({
       },
       success:function(res){
         console.log("收藏列表",res);
+        let collectList = res.data.data;
+        collectList.map((cur,index,arr)=>{
+          let obj={};
+          let long_price = cur.long_price;
+          obj.priceNum = cur.long_price.split("/")[0];
+          obj.priceUnit = cur.long_price.split("/")[1];
+          cur.long_price= obj;
+        })
         _this.setData({
-          collectList:res.data.data
+          collectList: collectList
         })
       }
     })
@@ -42,9 +51,29 @@ Page({
   deleteFavorate: function (e) {
     let _this = this;
     let houseId = e.currentTarget.dataset.id;
+    _this.setData({
+      deletHouseId: houseId
+    });
     util.checkLogin();
+    //this.dialog.show();
+
+    this.dialog.setData({
+      title: '提示',
+      content: '确定删除这一条吗?',
+      cancelText: '取消',
+      okText: '确定'
+    });
+    this.dialog.show();
+   
+  },
+
+  cancelEvent: function () {
+    this.dialog.close();
+  },
+  okEvent: function () {
+    let _this=this;
     let params = {
-      id: houseId,
+      id: this.data.deletHouseId,
       type: 2,
       openid: wx.getStorageSync("openid")
     }
@@ -61,20 +90,23 @@ Page({
         }
       }
     })
+
+    this.dialog.close();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    this.dialog = this.selectComponent('#dialog');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // util.checkLogin();
+    // this.getCollectList();
   },
 
   /**

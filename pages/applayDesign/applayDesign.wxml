@@ -21,6 +21,7 @@
                 bindinput="bindInput"
                 data-name="applayDesign.mobile"
                 placeholder='手机号'
+                type="number"
               ></input>
             </view> 
             <view class="inputItem">

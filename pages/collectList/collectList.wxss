@@ -1,7 +1,17 @@
 /* pages/collectList/collectList.wxss */
 .collectListWrapper{
+  height:100%;
   border-top:2rpx solid #e5e5e5;
+  
+}
+.collectListWrapper .collectCon{
   background:#fff;
+}
+.collectListWrapper .msg{
+  font-size:28rpx;
+  text-align:center;
+  background:#f9f9f9;
+  margin-top:50%;
 }
 .collectListWrapper .item{
   padding:30rpx 0;

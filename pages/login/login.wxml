@@ -11,6 +11,7 @@
            name="form.mobile" 
            placeholder="请输入手机号码"
            bindinput ="userTelInput"
+           type="number"
            ></input>
        </view>
        <view class="item">

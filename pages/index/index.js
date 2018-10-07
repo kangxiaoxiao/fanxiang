@@ -146,9 +146,10 @@ Page({
     })
   },
   setBannerHeight: function (e) {
-     var winWih = wx.getSystemInfoSync().windowHeight; //获取当前屏幕的高度
+    console.log("设备高度", wx.getSystemInfoSync());
+    var winWih = wx.getSystemInfoSync().windowHeight; //获取当前屏幕的高度
     this.setData({
-      Height: winWih+"px"//设置高度
+      Height: 2*winWih+"rpx"//设置高度
     })
   }, 
   changeTopBar:function(e){

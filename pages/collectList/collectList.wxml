@@ -1,39 +1,50 @@
 <!--pages/collectList/collectList.wxml-->
 <view class="collectListWrapper">
-  <view 
-    wx:for="{{collectList}}" 
-    class="item"
-    wx:key="{{index}}"
-    bindtap='goHouseDetail'
-    data-id="{{item.house_id}}"
-    >
-    <view class="left">
-      <image src="{{item.banner_img}}"></image>
-    </view>
-    <view class="center">
-      <view class="centerItem _title">{{item.title}}</view>
-      <view class="centerItem priceItem shortPrice">
-        <text>短租：</text>
-        <text class="unit">¥</text>
-        <text class="priceNum">{{item.short_price}}</text>
-        <text >/晚</text>
-      </view>
-      <view class="centerItem priceItem longPrice">
-        <text>短租：</text>
-        <text class="unit">¥</text>
-        <text class="priceNum">{{item.long_price.priceNum}}</text>
-        <text >/{{item.long_price.priceUnit}}</text>
-      </view>
-      <view class=" addressWrapper">
-        <image src="/pages/img/icons/address.png" mode="aspectFill"></image>
-        <text>{{item.address}}</text>
-      </view>
-    </view>
-    <view class="right">
-      <image 
+  <view class="collectCon">
+    <view class="msg" wx:if="{{collectList.length==0}}">暂无收藏</view>
+    <view 
+      wx:for="{{collectList}}" 
+      class="item"
+      wx:key="{{index}}"
+      bindtap='goHouseDetail'
       data-id="{{item.house_id}}"
-      catchtap='deleteFavorate'
-      src="/pages/img/icons/delete.png" mode="aspectFill"></image>
+      wx:if="{{collectList && collectList.length}}"
+      >
+      <view class="left">
+        <image src="{{item.banner_img}}"></image>
+      </view>
+      <view class="center">
+        <view class="centerItem _title">{{item.title}}</view>
+        <view class="centerItem priceItem shortPrice">
+          <text>短租：</text>
+          <text class="unit">¥</text>
+          <text class="priceNum">{{item.short_price}}</text>
+          <text >/晚</text>
+        </view>
+        <view class="centerItem priceItem longPrice">
+          <text>长租：</text>
+          <text class="unit">¥</text>
+          <text class="priceNum">{{item.long_price.priceNum}}</text>
+          <text >/{{item.long_price.priceUnit}}</text>
+        </view>
+        <view class=" addressWrapper">
+          <image src="/pages/img/icons/address.png" mode="aspectFill"></image>
+          <text>{{item.address}}</text>
+        </view>
+      </view>
+      <view class="right">
+        <image 
+        data-id="{{item.house_id}}"
+        catchtap='deleteFavorate'
+        src="/pages/img/icons/delete.png" mode="aspectFill"></image>
+      </view>
     </view>
   </view>
+  
+ <comfirmDialog  
+   id="dialog"
+   bind:cancelEvent="cancelEvent" 
+   bind:okEvent="okEvent"
+ ></comfirmDialog> 
+
 </view>

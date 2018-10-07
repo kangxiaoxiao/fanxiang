@@ -91,6 +91,7 @@ Page({
     })
   },
   handleFaviorite:function(e){
+    console.log("点击了收藏");
     let _this=this;
     let status = e.currentTarget.dataset.status;
     let changeStatus=null;
