@@ -146,11 +146,12 @@ Page({
     })
   },
   setBannerHeight: function (e) {
-    console.log("设备高度", wx.getSystemInfoSync());
     var winWih = wx.getSystemInfoSync().windowHeight; //获取当前屏幕的高度
     this.setData({
-      Height: 2*winWih+"rpx"//设置高度
+      Height: winWih+"px"//设置高度
     })
+    console.log("设备高度", wx.getSystemInfoSync());
+    console.log("设置的高度", 2 * winWih)
   }, 
   changeTopBar:function(e){
     console.log("点击顶部tab");
