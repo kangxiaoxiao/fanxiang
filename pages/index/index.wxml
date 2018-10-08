@@ -1,5 +1,11 @@
 <view>
   <view class="topBarWrapper {{topBarStatus!=0?'whitBg':''}}">
+    <image 
+      class="topShadow" 
+      src="/pages/img/icons/topShadow.png"
+      mode="aspectFill"
+      wx:if="{{topBarStatus==0}}"
+      ></image>
     <view class="topBarCon">
       <view class="item {{topBarStatus==0?'active':''}}" 
             bindtap="changeTopBar"

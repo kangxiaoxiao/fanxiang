@@ -14,7 +14,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    houseDetail:{}
+    _houseDetail:{}
   },
   ready: function () {
     let _this=this;
@@ -23,10 +23,12 @@ Component({
     //   cur.longPriceUnit = cur.long_price.split('/')[1];
     //   return cur;
     // });
-    _this.properties.houseDetail.longPriceNUm = _this.properties.houseDetail.long_price.split('/')[0];
-    _this.properties.houseDetail.longPriceUnit = _this.properties.houseDetail.long_price.split('/')[1];
+    let obj = _this.properties.houseDetail.long_price ;
+    _this.properties.houseDetail.longPriceNum = obj.split('/')[0];
+    _this.properties.houseDetail.longPriceUnit = obj.split('/')[1];
+    console.log("houseDetail", _this.properties.houseDetail)
     _this.setData({
-      houseDetail: _this.properties.houseDetail
+      _houseDetail: _this.properties.houseDetail
     })
     
   },

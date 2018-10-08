@@ -1,7 +1,9 @@
 /* pages/houseDetail/houseDetail.wxss */
 .detailWrapper{
-  margin-bottom:120rpx;
   background:#fff;
+}
+.detailCon{
+  padding-bottom:120rpx;
 }
 .swiperItem{
   overflow: hidden;
@@ -37,6 +39,9 @@
 }
 .itemWrapper .item{
   margin-bottom:44rpx;
+}
+.itemWrapper .item:last-child{
+  margin-bottom:0;
 }
 ._title{
   display:flex;
