@@ -104,7 +104,7 @@
         <view class="left">您的手机号</view>
         <view class="right inputWrapper">
           <view class="rightCon">
-            <input data-name='reserveTel' bindinput="handleBindInput"></input>
+            <input type="number" data-name='reserveTel' bindinput="handleBindInput"></input>
           </view>
         </view>
       </view>

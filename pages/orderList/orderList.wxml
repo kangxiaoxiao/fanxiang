@@ -1,0 +1,52 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="orderListWrapper">
+  <view class="topBtnWrapper">
+    <view 
+     class="item {{orderType==1?'active':''}}"
+     data-status="1"
+     bindtap='handleTabChange'
+     >待入住</view>
+    <view 
+     class="item {{orderType==0?'active':''}}"
+     data-status="0"
+     bindtap='handleTabChange'
+     >待支付</view>
+    <view 
+     class="item {{orderType==3?'active':''}}"
+     data-status="3"
+     bindtap='handleTabChange'
+     >已取消</view>
+    <view 
+     class="item {{orderType==4?'active':''}}"
+     data-status="4"
+     bindtap='handleTabChange'
+     >全部</view>
+  </view>
+  <view class="listWrapper">
+    <view class="msg" wx:if="{{!orderList || orderList.length==0}}">暂无相关订单</view>
+    <view class="listCon" wx:if="{{orderList && orderList.length>0}}">
+      <view 
+        class="item" 
+        wx:for="{{orderList}}" 
+        wx:key="{{index}}"
+        data-id="{{item.id}}"
+        bindtap='goOrderDetail'
+        >
+        <view class="left">
+          <image src="{{item.banner_img}}" mode="aspectFill"></image>
+        </view>
+        <view class="center">
+          <view class="centerItem _title">{{item.title}}</view>
+          <view class="centerItem">
+           {{item.startTime}}-{{item.endTime}}  共{{item.days}}天
+          </view>
+          <view class="centerItem">订单数量：{{item.house_total}}</view>
+          <view class="centerItem">订单金额：{{item.total}}</view>
+        </view>
+        <view class="right  {{item.status==0?'yellow':''}}  {{item.status==1?'green':''}} {{item.status==2?'green':''}} {{item.status==3?'green':''}}">
+          {{item.statusName}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

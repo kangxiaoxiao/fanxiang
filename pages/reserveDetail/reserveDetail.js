@@ -187,16 +187,53 @@ Page({
      util.checkLogin();
      let _this=this;
      let params={
-       houseId: _this.data.houseId,
-       starDate: _this.data._starDate,
-       endTime: _this.data._endDate,
-       reserveNum: _this.data.reserveNum,
-       reservePersonNum: _this.data.reservePersonNum,
-       reserveName: _this.data.reserveName,
-       reserveTel: _this.data.reserveTel,
-       total: _this.data.total
+       house_id: _this.data.houseId,
+       start_time: _this.data._starDate,
+       end_time: _this.data._endDate,
+       house_total: _this.data.reserveNum,
+       people_total: _this.data.reservePersonNum,
+       name: _this.data.reserveName,
+       mobile: _this.data.reserveTel,
+       days: _this.data.dayNum //住几晚
      }
-     console.log("提交的参数",params);
+    if (!_this.data.reserveName){
+      util.showToast("请填写预约人姓名");
+      return false;
+    }
+    if (!_this.data.reserveTel){
+      util.showToast("请填写手机号");
+      return false;
+    }
+    console.log("提交的参数",params);
+    let url = api.headUrl +"/api/wx/pay";
+     wx.request({
+       url: url,
+       data:params,
+       header: {
+         Authorization: wx.getStorageSync("token")
+       },
+       method: "post",
+       success:function(res){
+         if(res.data.code==200){
+           let wxPayConsult=res.data.data;
+           wx.requestPayment({
+             timeStamp: wxPayConsult.timestamp,
+             nonceStr: wxPayConsult.nonceStr,
+             package: wxPayConsult.package,
+             signType: wxPayConsult.signType,
+             paySign: wxPayConsult.paySign,
+             success:function(res){
+               console.log("支付成功",res);
+             },
+             fail:function(err){
+              console.log("支付失败",err);
+             }
+           })
+         }else{
+           util.showToast(res.data.msg);
+         }
+       }
+     })
   },
 
   /**

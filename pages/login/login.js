@@ -28,6 +28,7 @@ Page({
       [userTel]: e.detail.value
     })
   },
+  //获取手机验证码
   getCode:function () {
     let _this=this;
     let url = api.headUrl +"/api/user/sendVerifyCode";

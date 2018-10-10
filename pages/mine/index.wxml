@@ -14,15 +14,15 @@
       <view class="orderPanelCon">
          <view class="panelTitle">我的订单</view>
         <view class="lis">
-          <view class="item">
+          <view class="item" data-status="1" bindtap='goOrderList'>
               <image mode="aspectFit" src="/pages/img/mine/home.png"></image>
               <text>待入住</text>
           </view>
-          <view class="item">
+          <view class="item" data-status="0" bindtap='goOrderList'>
               <image mode="aspectFit" src="/pages/img/mine/pay.png"></image>
               <text>待支付</text>
           </view>
-          <view class="item">
+          <view class="item" data-status="4" bindtap='goOrderList'>
               <image mode="aspectFit" src="/pages/img/mine/all.png"></image>
               <text>全部</text>
           </view>

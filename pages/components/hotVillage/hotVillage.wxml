@@ -43,7 +43,7 @@
                               <star class="hot"  starNum="{{item.hot}}" starTitle="热度"></star>
                             </view>
                             <view class="item priceWrapper">
-                                <view class="priceCon">
+                                <view class="priceCon" wx:if="{{item.category_id!=2}}">
                                   <text class="priceLable">短租：</text>
                                   <text class="priceTxt">
                                     ¥<text class="price">{{item.short_price}}</text>/晚</text>

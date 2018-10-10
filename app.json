@@ -15,7 +15,9 @@
     "pages/aboutUs/aboutUs",
     "pages/reserveDetail/reserveDetail",
     "pages/collectList/collectList",
-    "pages/applayDesign/applayDesign"
+    "pages/applayDesign/applayDesign",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

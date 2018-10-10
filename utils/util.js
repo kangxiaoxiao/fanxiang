@@ -44,8 +44,17 @@ const showToast=function(msg){
   })
 }
 
+const formatDate= function(date){
+  let startTimeY = date.split("-")[0];
+  let startTimeM = date.split("-")[1];
+  let startTimeD = date.split("-")[2];
+  let startTime = startTimeM + "月" + startTimeD + "日";
+  return startTime
+}
+
 module.exports = {
   formatTime: formatTime,
+  formatDate: formatDate,
   checkLogin: checkLogin,
   showToast: showToast
 }

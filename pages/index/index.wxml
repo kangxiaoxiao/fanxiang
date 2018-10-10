@@ -123,8 +123,8 @@
               wx:key="{{index}}" 
               wx:for="{{filterParams.filter_sort}}" 
               bindtap='handleSort'
-               data-value="{{item.value}}"
-              >
+              data-value="{{item.value}}"
+              wx:if="{{((item.value==1||item.value==2) && topBarStatus==2)?false:true}}">
               <text>{{item.title}}</text>
             </view>
           </view>

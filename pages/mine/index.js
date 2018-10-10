@@ -1,5 +1,7 @@
 //获取应用实例
 const app = getApp();
+var api = require('../../utils/api.js');
+var util = require('../../utils/util.js');
 Page({
   data: {
     token:"",
@@ -26,6 +28,13 @@ Page({
         })
       }
     });
+  },
+  //订单列表
+  goOrderList:function(e){
+    let status = e.currentTarget.dataset.status;
+    wx.navigateTo({
+      url: '/pages/orderList/orderList?type=' + status,
+    }) 
   },
   call:function(){
     let _this=this;
