@@ -7,6 +7,10 @@ Component({
     houseDetail: {
       type: Object,
       value: {}
+    },
+    topBarStatus:{
+      type:String, //0=>热门推荐 1=>精品民宿 2=>乡村民宿 
+      value:""
     }
   },
 
@@ -18,6 +22,7 @@ Component({
   },
   ready: function () {
     let _this=this;
+    console.log("topBarStatus", this.properties.topBarStatus); 
     // _this.properties.houseList.map((cur,index,arr)=>{
     //   cur.longPriceNUm = cur.long_price.split('/')[0];
     //   cur.longPriceUnit = cur.long_price.split('/')[1];

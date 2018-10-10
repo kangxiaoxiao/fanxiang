@@ -26,7 +26,7 @@
                   <view class="bottomCon">
                       <view class="introCon">
                         <view class="item VillageTitle">{{item.title}}</view>   
-                            <view class="item reason">推荐理由：{{item.recommend_reason}}</view>
+                            <view class="item reason">房屋用途：{{item.recommend_reason}}</view>
                             <view class="item tab">
                               <view class="ziying tabItem">
                                 <text wx:if="{{item.type==1}}">自营</text>

@@ -33,7 +33,7 @@
         <text>{{_houseDetail.address}}</text>
       </view>
       <view class="item priceWrapper">
-         <view class="priceItem">
+         <view class="priceItem" wx:if="{{topBarStatus!=2}}">
            <label>短租：</label>
            <view class="priceNumWrapper">
               <text class="_type">¥</text>

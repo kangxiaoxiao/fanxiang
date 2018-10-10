@@ -138,6 +138,7 @@
       bindtap='goHouseDetail'
       >
         <goodVillage  
+          topBarStatus="{{topBarStatus}}" 
           houseDetail="{{item}}" 
           wx:if="{{houseList && houseList.length}}"
           >

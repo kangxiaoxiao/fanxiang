@@ -1,6 +1,9 @@
 .makeMoneyWrapper{
   margin-top:20rpx;
-  margin-bottom:148rpx;
+  padding-bottom:148rpx;
+}
+.formWrapper{
+  overflow:hidden;
 }
 .makeMoneyWrapper .formTitle{
   margin:24rpx 30rpx 34rpx 30rpx;
