@@ -218,22 +218,25 @@
   </view>
 
   <cover-view class="btnWrapper" >
-      <cover-view class="btnItem leftItem" bindtap="applyDesign" data-status="1">
-        <cover-image class="icon" src="/pages/img/icons/design.png" mode="aspectFill"></cover-image>
+      <cover-view class="btnItem leftItem" bindtap="applyDesign" data-status="1" wx:if="{{houseDetail.category_id!=1}}">
+        <!-- <cover-image class="icon" src="/pages/img/icons/design.png" mode="aspectFill"></cover-image> -->
         <cover-view class="txt" >申请设计</cover-view>
       </cover-view>
       <cover-view class="btnItem centerItem" bindtap="applyDesign" data-status="2">
-        <cover-image class="icon" src="/pages/img/icons/house.png" mode="aspectFill"></cover-image>
+        <!-- <cover-image class="icon" src="/pages/img/icons/house.png" mode="aspectFill"></cover-image> -->
         <cover-view class="txt">
-          <cover-view class="_txt">我要看房</cover-view>
-          <cover-view class="msg">(适合长租)</cover-view>
+          <cover-view class="txtItem  msg">
+           <cover-view class="msg_txt">(适合长租)</cover-view>
+          </cover-view>
+          <cover-view class="txtItem  _txt">我要看房</cover-view>
         </cover-view>
       </cover-view>
       <cover-view 
         class="btnItem rightItem"
         bindtap='goReserveDetail'
+        wx:if="{{houseDetail.category_id!=2}}
         >
-        立即预定
+        <cover-view class="txt">立即预定</cover-view>
       </cover-view>
     </cover-view>
   

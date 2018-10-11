@@ -125,7 +125,29 @@
   text-align:center; 
   border-left:0;
   border-right:0;
+  line-height:100rpx;
+  flex:1;
+  background:#fff;
+  font-size:0;
 }
+.btnWrapper .btnItem:first-child{
+  background:#FF9600;
+}
+.btnWrapper .btnItem:last-child{
+  background:#33C2A6
+}
+
+.btnWrapper .btnItem .txt{
+  color:#fff;
+  display:inline-block;
+  vertical-align: top;
+  text-align:center;
+  font-size:34rpx;
+  line-height:100rpx;
+  position:relative;
+}
+
+
 .btnWrapper .btnItem::after{
   border:none;
 }
@@ -135,6 +157,31 @@
   width:36rpx;
   height:36rpx;
 }
+.btnWrapper .btnItem .txt .txtItem{
+  display:inline-block;
+  vertical-align:middle;
+  position:relative;
+}
+.btnWrapper .btnItem .txt .txtItem._txt,.btnWrapper .btnItem .txt .txtItem.msg{
+  display:inline-block;
+  text-align:center;
+}
+.btnWrapper .btnItem .txt .txtItem._txt{
+  line-height:100rpx;
+}
+.btnWrapper .btnItem .txt .txtItem.msg{
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  font-size:18rpx;
+  top:10rpx;
+  color:#efefef;
+} 
+.msg_txt{
+  text-align:center;
+}
+/* 
 .btnWrapper .btnItem.centerItem{
   border-left:2rpx solid #ECECEC;
 }
@@ -161,12 +208,7 @@
 }
 .btnWrapper .btnItem.centerItem .txt ._txt{
   display:inline-block;
-}
-.btnWrapper .btnItem .msg{
-  display:inline-block;
-  color:#e5e5e5;
-  font-size:18rpx;
-}  
+} */ 
 .dialogWrapper .inputItem{
   border-radius:6rpx;
   background:#F5F5F5;
@@ -304,6 +346,12 @@
 }
 .dscWrapper .priceWrapper .priceItem .priceNumWrapper{
   display:inline-block;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper .longPriceItem{
+  display:inline-block;
+}
+.dscWrapper .priceWrapper .priceItem .priceNumWrapper .longPriceItem +.longPriceItem{
+  margin-left:20rpx;
 }
 .dscWrapper .priceWrapper .priceItem .priceNumWrapper text{
   font-size:20rpx;

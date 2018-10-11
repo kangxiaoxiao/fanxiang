@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     console.log(options);
     this.setData({
-      orderType: options.type
+      orderType: parseInt(options.type)
     })
     this.getOrderList();
   },

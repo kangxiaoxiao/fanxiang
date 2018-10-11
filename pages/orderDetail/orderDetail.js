@@ -50,7 +50,59 @@ Page({
   },
   handleSubmit:function(e){
     let id = e.currentTarget.dataset.id;
-    console.log("立即支付",id);
+    this.handleSubmit(id)
+  },
+  pay: function (orderId) {
+    let _this = this;
+    let url = api.headUrl + "/api/wx/pay";
+    wx.request({
+      url: url,
+      data: { order_id: orderId },
+      header: {
+        Authorization: wx.getStorageSync("token")
+      },
+      method: "post",
+      success: function (res) {
+        if (res.data.code == 200) {
+          let wxPayConsult = res.data.data;
+          wx.requestPayment({
+            timeStamp: wxPayConsult.timestamp,
+            nonceStr: wxPayConsult.nonceStr,
+            package: wxPayConsult.package,
+            signType: wxPayConsult.signType,
+            paySign: wxPayConsult.paySign,
+            success: function (res) {
+              wx.showToast({
+                title:"支付成功",
+                success:function(res){
+                  setTimeout(function(){
+                    wx.navigateTo({
+                      url: '/pages/orderList/orderList?type=1',
+                    })
+                    wx.hideToast();
+                  },1500)
+                }
+              })
+            },
+            fail: function (err) {
+              wx.showToast({
+                title: "支付失败",
+                success: function (res) {
+                  setTimeout(function () {
+                    wx.navigateTo({
+                      url: '/pages/orderList/orderList?type=0',
+                    })
+                    wx.hideToast();
+                  }, 1500)
+                }
+              })
+            }
+          })
+        } else {
+          util.showToast(res.data.msg);
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

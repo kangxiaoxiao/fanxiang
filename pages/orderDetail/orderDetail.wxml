@@ -29,6 +29,7 @@
       </view>
   </view>
   <view 
+   wx:if="{{orderDetail.status==0}}"
    class="bottomBtnWrapper" 
    data-id="{{orderDetail.id}}" 
    bindtap="handleSubmit">

@@ -182,33 +182,57 @@ Page({
     console.log("天数", _this.data.dayNum);
     console.log("总数",total);
   },
-  //提交
+  //支付流程  先下单，生成订单号。再唤起支付
   submit:function(){
-     util.checkLogin();
-     let _this=this;
-     let params={
-       house_id: _this.data.houseId,
-       start_time: _this.data._starDate,
-       end_time: _this.data._endDate,
-       house_total: _this.data.reserveNum,
-       people_total: _this.data.reservePersonNum,
-       name: _this.data.reserveName,
-       mobile: _this.data.reserveTel,
-       days: _this.data.dayNum //住几晚
-     }
-    if (!_this.data.reserveName){
+    util.checkLogin();
+    let _this=this;
+    let url = api.headUrl + "/api/order/add";
+    let params = {
+      house_id: _this.data.houseId,
+      start_time: _this.data._starDate,
+      end_time: _this.data._endDate,
+      house_total: _this.data.reserveNum,
+      people_total: _this.data.reservePersonNum,
+      name: _this.data.reserveName,
+      mobile: _this.data.reserveTel,
+      days: _this.data.dayNum //住几晚
+    }
+    if (!_this.data.reserveName) {
       util.showToast("请填写预约人姓名");
       return false;
     }
-    if (!_this.data.reserveTel){
+    if (!_this.data.reserveTel) {
       util.showToast("请填写手机号");
       return false;
     }
-    console.log("提交的参数",params);
+    if (!_this.data.dayNum){
+      util.showToast("离开时间必须大于开始时间");
+      return false;
+    }
+    wx.request({
+      url: url,
+      data: params,
+      method: "post",
+      header: {
+        Authorization: wx.getStorageSync("token")
+      },
+      success: function (res) {
+        if (res.data.code == 200) {
+          let orderId=res.data.data;
+          _this.pay(orderId);
+        }else{
+          util.showToast(res.data.msg);
+        }
+      }
+    })
+   
+  },
+  pay: function (orderId){
+     let _this=this;
     let url = api.headUrl +"/api/wx/pay";
      wx.request({
        url: url,
-       data:params,
+       data: { order_id:orderId},
        header: {
          Authorization: wx.getStorageSync("token")
        },
@@ -223,10 +247,30 @@ Page({
              signType: wxPayConsult.signType,
              paySign: wxPayConsult.paySign,
              success:function(res){
-               console.log("支付成功",res);
+               wx.showToast({
+                 title: "支付成功",
+                 success: function (res) {
+                   setTimeout(function () {
+                     wx.navigateTo({
+                       url: '/pages/orderList/orderList?type=1',
+                     })
+                     wx.hideToast();
+                   }, 1500)
+                 }
+               })
              },
              fail:function(err){
-              console.log("支付失败",err);
+               wx.showToast({
+                 title: "支付成功",
+                 success: function (res) {
+                   setTimeout(function () {
+                     wx.navigateTo({
+                       url: '/pages/orderList/orderList?type=0',
+                     })
+                     wx.hideToast();
+                   }, 1500)
+                 }
+               }) 
              }
            })
          }else{
