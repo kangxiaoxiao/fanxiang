@@ -234,7 +234,7 @@
       <cover-view 
         class="btnItem rightItem"
         bindtap='goReserveDetail'
-        wx:if="{{houseDetail.category_id!=2}}
+        wx:if="{{houseDetail.category_id!=2}}"
         >
         <cover-view class="txt">立即预定</cover-view>
       </cover-view>
