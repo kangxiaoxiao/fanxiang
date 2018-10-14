@@ -57,13 +57,13 @@ Page({
     let month = setMonth || now.getMonth();
     //没有+1方便后面计算当月总天数
     let nextMonth = (month + 1) > 11 ? 1 : (month + 1);
-    console.log("当前选中月nextMonth：" + nextMonth);
+    //console.log("当前选中月nextMonth：" + nextMonth);
     //目标月1号对应的星期
     let startWeek = this.getWeek(year, nextMonth, 1); //new Date(year + ',' + (month + 1) + ',' + 1).getDay();  
-    console.log("目标月1号对应的星期startWeek:" + startWeek);
+   // console.log("目标月1号对应的星期startWeek:" + startWeek);
     //获取目标月有多少天
     let dayNums = this.getTotalDayByMonth(year, nextMonth); //new Date(year, nextMonth, 0).getDate();         
-    console.log("获取目标月有多少天dayNums:" + dayNums);
+  //  console.log("获取目标月有多少天dayNums:" + dayNums);
     let obj = {};
     let num = 0;
     if (month + 1 > 11) {
@@ -94,8 +94,8 @@ Page({
         clazz = clazz + ' active';
       }
      // var hasHouseIndex = this.checkHouseNum(this.data.disable_time, date);
-      console.log("无房的数组", this.data.disable_time);
-      console.log("当日", date);
+     // console.log("无房的数组", this.data.disable_time);
+     // console.log("当日", date);
       if (this.data.disable_time.indexOf(date)!=-1){
         houseNum="无房";
         clazz = 'unavailable ' + clazz;
@@ -169,8 +169,8 @@ Page({
       housenum
     } = e.currentTarget.dataset;
     let curDate = year + "-" + util.formatNumber(month) + "-" + util.formatNumber(day);
-    console.log("当前点击的日期：" + curDate );
-    console.log("房间的数量", housenum); 
+  //  console.log("当前点击的日期：" + curDate );
+  //  console.log("房间的数量", housenum); 
     //当前选择的日期为同一个月并小于今天，或者点击了空白处（即day<0），不执行
     if ((day < DATE_DAY && month == DATE_MONTH) || day <= 0 && !housenum)
       return; 
@@ -236,7 +236,7 @@ Page({
              url: '/pages/reserveDetail/reserveDetail?timeStr=' + JSON.stringify(_this.data.checkDate) + "&id=" + _this.data.houseid
            })
         }
-        console.log(JSON.stringify(this.data.checkDate));
+      //  console.log(JSON.stringify(this.data.checkDate));
         break;
       }
     }

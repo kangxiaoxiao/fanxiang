@@ -15,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     if (options.orderId){
       wx.navigateTo({
         url: '/pages/orderDetail/orderDetail?id=' + options.orderId,
@@ -71,7 +70,6 @@ Page({
              }
              return obj;
            })
-           console.log("orderList", orderList);
             _this.setData({
               orderList: orderList
             })

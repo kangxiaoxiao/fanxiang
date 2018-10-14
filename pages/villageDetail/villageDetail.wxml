@@ -37,6 +37,7 @@
       <view class="con">
         <map 
           id="map" 
+          bindtap="handleMapTap"
           longitude="{{villageDetail.lng}}" 
           latitude="{{villageDetail.lat}}" 
           scale="14" 
@@ -59,10 +60,10 @@
       </view>
     </view>
   </view>
-  <cover-view class="reserveBtn" bindtap="reserve">
+  <!-- <cover-view class="reserveBtn" bindtap="reserve">
    <cover-view class="txtWrapper">
      <cover-view class='txt'>立即</cover-view>
      <cover-view class="txt">预定</cover-view>
    </cover-view> 
-  </cover-view>
+  </cover-view> -->
 </view>

@@ -40,7 +40,6 @@ Page({
       method: "get",
       success: function (res) {
         if (res.data.code == 200) {
-          console.log("获取筛选项成功", res.data.data);
           _this.setData({
             filterParams: res.data.data
           })
@@ -81,7 +80,6 @@ Page({
             cityListArray: cityListArray,
             cityListValueArray: cityListValueArray
           })
-          console.log("城市列表", cityListArray, cityListValueArray)
         }
       }
     })
@@ -94,7 +92,6 @@ Page({
     let params = {
       "city_code": city_code
     };
-    console.log("params", params);
     _this.setData({
       villageList: []
     });
@@ -128,14 +125,12 @@ Page({
       city_code: _this.data.condition.city_code,
       sort_type: _this.data.condition.sort_type,
     };
-    console.log("请求房源列表的参数", params);
     wx.request({
       url: url,
       data: params,
       method: "post",
       success: function (res) {
         wx.hideLoading();
-        console.log("房源列表获取成功", res);
         _this.setData({
           houseList: res.data.data
         })
@@ -152,7 +147,6 @@ Page({
     })
   },
   changeTopBar: function (e) {
-    console.log("点击顶部tab");
     this.setData({
       topBarStatus: e.currentTarget.dataset.status
     })
@@ -168,7 +162,6 @@ Page({
   tapName: function (e) {
     let tabStatus;
     let status = e.currentTarget.dataset.status;
-    console.log("筛选按钮被点击", status);
     if (this.data.conditionTabStatus && this.data.conditionTabStatus == status) {
       tabStatus = "";
     } else {
@@ -179,13 +172,11 @@ Page({
     })
   },
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value,
       curCityCode: this.data.cityListValueArray[e.detail.value].city_code
     });
     let curCityCode = this.data.curCityCode;
-    console.log("选中的curCityCode", curCityCode);
     this.getHotVillageList(curCityCode);
   },
   handleCity: function (e) {
@@ -240,6 +231,6 @@ Page({
   },
   //跳转到详情
   goHouseDetail: function (e) {
-    console.log("跳转到详情", e.detail) // 自定义组件触发事件时提供的detail对象
+   // console.log("跳转到详情", e.detail) // 自定义组件触发事件时提供的detail对象
   },
 })

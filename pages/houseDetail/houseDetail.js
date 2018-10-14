@@ -54,7 +54,6 @@ Page({
     }
   },
   handleMapTap:function(){
-    console.log("点击了地图");
     let _this=this;
     var latitude = _this.data.houseDetail.lat
     var longitude = _this.data.houseDetail.lng
@@ -84,7 +83,6 @@ Page({
       data: params,
       method:"get",
       success:function(res){
-        console.log("房源详情",res);
         if(res.data.code==200){
           let latitude = "markers[0].latitude";
           let longitude = "markers[0].longitude";
@@ -100,7 +98,6 @@ Page({
               })
             }
           }
-          console.log("房源详情", houseDetail);
            _this.setData({
              houseDetail: houseDetail,
              [latitude]: res.data.data.lat,
@@ -115,7 +112,6 @@ Page({
     })
   },
   handleFaviorite:function(e){
-    console.log("点击了收藏");
     let _this=this;
     let status = e.currentTarget.dataset.status;
     let changeStatus=null;
@@ -143,10 +139,8 @@ Page({
        }
      }
    })
-    console.log("收藏", status);
   },
   bindInput:function(e){
-    console.log("绑定输入",e.detail.value);
     let inputLabel = e.currentTarget.dataset.name;
     this.setData({
       [inputLabel]: e.detail.value
@@ -186,9 +180,6 @@ Page({
     })
   },
   okEvent:function(e){
-    console.log("申请设计提交",e.detail);
-    console.log("token", wx.getStorageSync("token"));
-    console.log(this.data.applayDesign);
     let _this=this;
     let url =api.headUrl+"/api/house/appointment";
     let params = _this.data.applayDesign;

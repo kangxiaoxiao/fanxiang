@@ -26,7 +26,7 @@ Component({
     showAnimate: false
   },
   ready:function(){
-    console.log("cityList", this.properties.cityList);
+    
   },
   
 
@@ -43,12 +43,9 @@ Component({
       this.triggerEvent('myevent', myEventDetail, myEventOption)
     },
     swiperChange:function(e){
-      console.log("轮播change");
       this.triggerEvent('animateStart', 0)
     },
     showUpDownAnimate: function (e,status) {
-      console.log("动画开始加载时间触发");
-      console.log(e.currentTarget.dataset.imageindex);
       let imageindex = e.currentTarget.dataset.imageindex;
       if (imageindex==0){
         this.triggerEvent('animateStart', 1)

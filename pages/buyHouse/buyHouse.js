@@ -31,7 +31,6 @@ Page({
   },
   //区域选择
   bindRegionChange:function(e){
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     const region ="form.region";
     this.setData({
       [region]: e.detail.value
@@ -39,7 +38,6 @@ Page({
   },
   //买房 or 租房
   handleStatusChange:function(e){
-    console.log("status", e.currentTarget.dataset.status);
     const formStatus = "form.status";
     var status = e.currentTarget.dataset.status;
     this.setData({
@@ -47,7 +45,6 @@ Page({
     });
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);
     let _this=this;
     _this.setData({
       loading:true
@@ -69,7 +66,6 @@ Page({
       },
       method:"post",
       success:function(res){
-        console.log(res);
         _this.setData({
           loading: false
         })

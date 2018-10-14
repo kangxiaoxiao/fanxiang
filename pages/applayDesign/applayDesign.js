@@ -19,16 +19,12 @@ Page({
     },
   },
   bindInput: function (e) {
-    console.log("绑定输入", e.detail.value);
     let inputLabel = e.currentTarget.dataset.name;
     this.setData({
       [inputLabel]: e.detail.value
     })
   },
   submit: function (e) {
-    console.log("申请设计提交", e.detail);
-    console.log("token", wx.getStorageSync("token"));
-    console.log(this.data.applayDesign);
     let _this = this;
     let url = api.headUrl + "/api/house/appointment";
     let params = _this.data.applayDesign;
@@ -72,7 +68,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
     //status
     let formType ="applayDesign.type";
     this.setData({

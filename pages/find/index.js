@@ -21,7 +21,6 @@ Page({
       data: params,
       header: {},
       success: function (res) {
-        console.log("乡村列表返回",res);
         wx.hideLoading();
         if(res.data.code==200){
           _this.setData({
@@ -33,7 +32,6 @@ Page({
   },
   //点击顶部tab
   handleTopBtnStatusChange:function(e){
-    console.log(e.currentTarget.dataset.status);
     let status = e.currentTarget.dataset.status;
     let url="";
     if (status==0){
@@ -48,7 +46,6 @@ Page({
     })
   },
   errLoadImg(event){
-    console.log("图片加载失败", event.detail);
     var index = event.currentTarget.dataset.index
     var img = 'villageList[' + index + '].banner_img'
     this.setData({

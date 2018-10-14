@@ -21,8 +21,7 @@ Component({
 
   },
   ready: function () {
-    console.log("starNum",this.properties.starNum);
-    console.log("starTitle",this.properties.starTitle);
+    
   },
 
   /**

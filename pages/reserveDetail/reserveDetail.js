@@ -23,25 +23,9 @@ Page({
     total:"",
     pickerRange:{}
   },
-  // handleDateRange(){
-  //   let _this=this;
-  //   console.log("开始", _this.data._starDate);
-  //   console.log("结束", _this.data._starDate);
-  //   let pickerOne = new Date(new Date(_this.data._endDate).getTime() - 24 * 60 * 60 * 1000); 
-  //   let pickerTwo = new Date(new Date(_this.data._starDate).getTime() + 24 * 60 * 60 * 1000);
-  //   let pickerRange={
-  //     pickerOneEnd: util.formatTime(pickerOne, "onlyDate"),
-  //     pickerTwoStart: util.formatTime(pickerTwo, "onlyDate"),
-  //   };
-  //   _this.setData({
-  //     pickerRange: pickerRange
-  //   })
-   
-  // },
   selectDate:function(e){
     let _this = this;
     let disable_time = e.currentTarget.dataset.disabletime;
-    console.log("跳转到价格日历",disable_time);
     wx.navigateTo({
       url: '/pages/datePicker/datePicker?disable_time=' + disable_time + "&houseid=" + _this.data.houseId,
     })
@@ -59,7 +43,6 @@ Page({
     })
   },
   bindStartDateChange:function(e){
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     let _this=this;
     let weekArr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     let starDay = new Date(e.detail.value);   
@@ -76,7 +59,6 @@ Page({
     // })
   },
   bindEndDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     let weekArr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
     let endDay = new Date(e.detail.value);
     this.setData({
@@ -92,7 +74,6 @@ Page({
     // })
   },
   handleReserveNum:function(e){
-    console.log("点击按钮");
     let _this=this;
     let _type = e.currentTarget.dataset.type;
     let reserveNum = _this.data.reserveNum;
@@ -134,12 +115,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let _this=this;
-    if (options.timeStr){
-      console.log(JSON.parse(options.timeStr));
-      console.log(JSON.parse(options.timeStr)[0]);
-    }
-    
+    let _this=this;   
     util.checkLogin();
     let houseId = options.id;
     this.setData({
@@ -180,7 +156,6 @@ Page({
          if(res.data.code==200){
            let houseDetail=res.data.data;
            houseDetail.disable_time = houseDetail.disable_time.join(",");
-           console.log("无房日期字符串", houseDetail.disable_time);
            _this.setData({
              houseDetail: houseDetail
            });
@@ -206,8 +181,6 @@ Page({
        endDate: _this.data.endDate ||util.formatTime(tomorrow, "onlyDate","en"),
        endDateDay: _this.data.endDateDay ||weekArr[tomorrow.getDay()]
      });
-    console.log("开始时间", this.data.startDate, this.data.startDateDay);
-    console.log("结束时间", this.data.endDate, this.data.endDateDay);
     // this.handleDateRange();
     
   },
@@ -218,10 +191,6 @@ Page({
     _this.setData({
       total: total
     });
-    console.log("单价", _this.data.houseDetail.short_price);
-    console.log("套数", _this.data.reserveNum);
-    console.log("天数", _this.data.dayNum);
-    console.log("总数",total);
   },
   //支付流程  先下单，生成订单号。再唤起支付
   submit:function(){

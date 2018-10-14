@@ -22,7 +22,6 @@ Component({
   },
   ready: function () {
     let _this=this;
-    console.log("topBarStatus", this.properties.topBarStatus); 
     // _this.properties.houseList.map((cur,index,arr)=>{
     //   cur.longPriceNUm = cur.long_price.split('/')[0];
     //   cur.longPriceUnit = cur.long_price.split('/')[1];
@@ -31,7 +30,6 @@ Component({
     let obj = _this.properties.houseDetail.long_price ;
     _this.properties.houseDetail.longPriceNum = obj.split('/')[0];
     _this.properties.houseDetail.longPriceUnit = obj.split('/')[1];
-    console.log("houseDetail", _this.properties.houseDetail)
     _this.setData({
       _houseDetail: _this.properties.houseDetail
     })

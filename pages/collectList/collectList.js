@@ -27,7 +27,6 @@ Page({
         Authorization: wx.getStorageSync("token")
       },
       success:function(res){
-        console.log("收藏列表",res);
         let collectList = res.data.data;
         collectList.map((cur,index,arr)=>{
           let obj={};

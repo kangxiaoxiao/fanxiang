@@ -42,7 +42,6 @@ Page({
     //监听页面初次渲染完成
   },
   showUpDownAnimate:function(e){
-    console.log("组件传过来的值",e.detail);
     let _this = this;
     _this.setData({
       showAnimate:true,
@@ -98,7 +97,6 @@ Page({
       method:"get",
       success:function(res){
         if(res.data.code==200){
-          console.log("获取筛选项成功", res.data.data);
           _this.setData({
             filterParams:res.data.data
           })
@@ -139,7 +137,6 @@ Page({
             cityListArray: cityListArray,
             cityListValueArray: cityListValueArray
           })
-          console.log("城市列表", cityListArray, cityListValueArray)
         }   
       }
     })
@@ -152,7 +149,6 @@ Page({
     let params={
       "city_code":city_code
     };
-    console.log("params",params);
     _this.setData({
       villageList: []
     });
@@ -186,14 +182,12 @@ Page({
       city_code: _this.data.condition.city_code,
       sort_type: _this.data.condition.sort_type,
     };
-    console.log("请求房源列表的参数",params);
     wx.request({
       url: url,
       data:params,
       method:"post",
       success:function(res){
         wx.hideLoading();
-        console.log("房源列表获取成功",res);
         _this.setData({
           houseList:res.data.data
         })
@@ -208,11 +202,8 @@ Page({
     this.setData({
       Height: winWih+"px"//设置高度
     })
-    console.log("设备高度", wx.getSystemInfoSync());
-    console.log("设置的高度", 2 * winWih)
   }, 
   changeTopBar:function(e){
-    console.log("点击顶部tab");
     this.setData({
       topBarStatus: e.currentTarget.dataset.status
     })
@@ -228,7 +219,6 @@ Page({
   tapName: function (e) {
     let tabStatus;
     let status = e.currentTarget.dataset.status;
-    console.log("筛选按钮被点击", status);
     if (this.data.conditionTabStatus && this.data.conditionTabStatus == status){
       tabStatus="";
     }else{
@@ -239,13 +229,11 @@ Page({
     })
   },
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value,
       curCityCode: this.data.cityListValueArray[e.detail.value].city_code
     });
     let curCityCode = this.data.curCityCode;
-    console.log("选中的curCityCode", curCityCode);
     this.getHotVillageList(curCityCode);
   },
   handleCity:function(e){
@@ -306,7 +294,6 @@ Page({
     })
   },
   goVillageDetal:function(e){
-    console.log("跳转到详情",e.detail);
     let houseId = e.detail.id;
     wx.navigateTo({
       url: '/pages/houseDetail/houseDetail?id=' + houseId,

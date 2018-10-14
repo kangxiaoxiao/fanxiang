@@ -32,6 +32,7 @@ Page({
     }],
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -39,12 +40,29 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     });
-     console.log("options",options);
     let id = options.id;
     this.setData({
       houseId:id
     });
      this.getVillageDetail(id);
+  },
+
+  handleMapTap: function () {
+    let _this = this;
+    var latitude = _this.data.villageDetail.lat
+    var longitude = _this.data.villageDetail.lng
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {
+        wx.openLocation({
+          latitude: +latitude,
+          longitude: +longitude,
+          name: _this.data.villageDetail.title,
+          address: _this.data.villageDetail.address || "",
+          scale: 28
+        })
+      }
+    })
   },
   getVillageDetail(id){
     let _this=this;
@@ -57,7 +75,6 @@ Page({
       data:params,
       method:"get",
       success:function(res){
-        console.log("乡村详情",res);
         if(res.data.code==200){
           let latitude ="markers[0].latitude";
           let longitude ="markers[0].longitude";
@@ -83,7 +100,6 @@ Page({
     }
   },
   reserve:function(){
-    console.log("立即预定");
     let _this=this;
     util.checkLogin();
     wx.navigateTo({

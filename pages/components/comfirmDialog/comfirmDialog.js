@@ -45,7 +45,6 @@ Component({
       this.triggerEvent('cancelEvent');
     },
     _okEvent: function () {
-      console.log("事件触发");
       this.triggerEvent('okEvent');
     }
   }

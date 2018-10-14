@@ -55,7 +55,6 @@ Page({
     })
   },
   okEvent: function () {
-    //console.log(this.dialog.data.okText);
     this.dialog.close();
   },
   loadImage:function(e){
@@ -67,7 +66,6 @@ Page({
       sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
-        console.log("选择照片成功",res);
         let imageUrl="";
         if (status==0){
           imageUrl ="form.picture1"
@@ -99,20 +97,18 @@ Page({
           })
       },
       fail:function(err){
-         console.log("上传失败",err);  
+ 
       }
     })
   },
   //区域选择
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     const region = "form.region";
     this.setData({
       [region]: e.detail.value
     })
   },
   formSubmit: function (e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.value);
     let _this = this;
     _this.setData({
       loading: true
@@ -139,7 +135,6 @@ Page({
       },
       method: "post",
       success: function (res) {
-        console.log(res);
         _this.setData({
           loading: false
         })
