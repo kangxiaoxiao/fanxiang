@@ -18,8 +18,10 @@
   margin-bottom:34rpx;
 }
 .makeMoneyWrapper .item{
-  margin-bottom:24rpx;
-  display:flex;
+  margin-bottom:24rpx; 
+}
+.hitDetailWrapper{
+   display:flex;
 }
 .makeMoneyWrapper .item text{
   display:inline-block;

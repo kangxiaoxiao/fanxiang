@@ -54,7 +54,7 @@
       </view> 
       </view>
       <view class="dialogFooter">
-        <button plain bindtap="submit">提交</button>
+        <view class="submitBtn" bindtap="submit">提交</view>
       </view>
     </view> 
   </view>

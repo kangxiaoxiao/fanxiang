@@ -39,13 +39,13 @@
 .dialogWrapper .dialogFooter{
   margin-top:68rpx;
 }
-.dialogWrapper .dialogFooter button{
-  border-color:#33C2A6;
-  color:#33C2A6;
-  width:294rpx;
-  height:68rpx;
-  line-height:68rpx;
+.dialogWrapper .dialogFooter .submitBtn{
+  background:#33C2A6;
+  color:#fff;
+  height:100rpx;
+  line-height:100rpx;
   font-size:26rpx;
+  text-align:center;
   border-radius:6rpx;
 }
 .dialogWrapper .inputItem{

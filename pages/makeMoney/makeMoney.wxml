@@ -84,7 +84,7 @@
     >
     <view slot="con">
       <view class="conWrapper">
-         <view class="item" wx:for="{{hintDetailList}}">
+         <view class="item hitDetailWrapper" wx:for="{{hintDetailList}}">
            <text class="star {{index==2?'hidden':''}}">*</text>
            <text>{{index+1}}、{{item}}</text>
          </view>
