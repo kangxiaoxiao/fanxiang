@@ -22,7 +22,8 @@ Page({
     conditionTabStatus:"",
     houseList:[], //房源列表
     animationData:{}, //动画
-    showAnimate:false
+    showAnimate:false,
+    hideAnimateLocal:true,
   },
   onLoad: function () {
     this.setBannerHeight();
@@ -34,6 +35,9 @@ Page({
     //获取筛选项
     this.getFilterParam();    
   },
+  onShow:function(){
+    
+  },
   onReady:function(){
     //监听页面初次渲染完成
   },
@@ -41,7 +45,8 @@ Page({
     console.log("组件传过来的值",e.detail);
     let _this = this;
     _this.setData({
-      showAnimate:true
+      showAnimate:true,
+      hideAnimateLocal: wx.getStorageSync("hideAnimateLocal")
     });
     var animation = wx.createAnimation({
       timingFunction: 'ease-out',
@@ -63,12 +68,14 @@ Page({
       _this.setData({
         showAnimate: false
       })
+      wx.setStorageSync("hideAnimateLocal",false);
     }, 5000)
     if (e.detail == 0) {
       clearInterval(animateExport);
       _this.setData({
         showAnimate: false
       })
+      wx.setStorageSync(hideAnimateLocal, false);
     }
   },
   pickupFilter:function(e){

@@ -155,7 +155,7 @@
   <view  
     class="animateWrapper" 
     animation="{{animationData}}"
-    wx:if="{{showAnimate && topBarStatus==0}}"
+    wx:if="{{showAnimate && topBarStatus==0 && !hideAnimateLocal}}"
     >
     <image src="/pages/img/icons/up.jpg" mode="aspectFill"></image> 
     </view>

@@ -76,6 +76,7 @@
   </view>
 
   <dialog 
+    wx:if="{{hintDetailList && hintDetailList.length>0}}"
     title="做经纪人赚佣金" 
     footer="加入我们" 
     bind:okEvent="okEvent"
@@ -83,9 +84,10 @@
     >
     <view slot="con">
       <view class="conWrapper">
-         <view class="item">1.经纪人上传优质土地与农庄供应消息，平台经验证有效后，此农庄出租后将受益的5%作为经纪人的收益。 </view>
-        <view class="item">2.经纪人独立或在平台帮助下成功撮合交易，或土地类抵押贷款业务后收取佣金及服务费。</view>
-        <view class="item"> 3.随着公司新业务的展开而获取其他收入。</view>
+         <view class="item" wx:for="{{hintDetailList}}">
+           <text class="star {{index==2?'hidden':''}}">*</text>
+           <text>{{index+1}}、{{item}}</text>
+         </view>
       </view>   
     </view>
   </dialog>  

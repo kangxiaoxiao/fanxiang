@@ -19,6 +19,19 @@
 }
 .makeMoneyWrapper .item{
   margin-bottom:24rpx;
+  display:flex;
+}
+.makeMoneyWrapper .item text{
+  display:inline-block;
+  flex:1
+}
+.makeMoneyWrapper .item text.star{
+  flex:0 0 20rpx;
+  width:20rpx;
+  color:red;
+}
+.makeMoneyWrapper .item text.star.hidden{
+  visibility: hidden;
 }
 .makeMoneyWrapper .item .imageWrapper{
   font-size:0;

@@ -18,7 +18,8 @@ Page({
       openBank:"", //开户行
       bankNum:"", //卡号
       bankCardName:"", //开户人姓名
-      region:"" //代理区域
+      region:"", //代理区域
+      hintDetailList:[]
     }
   },
   onLoad: function (options) {
@@ -36,10 +37,22 @@ Page({
         })
       }
     });
+    this.getHintDetail();
   },
   onReady: function () {
     this.dialog = this.selectComponent('#dialog');
     this.dialog.show();
+  },
+  getHintDetail:function(){
+    let _this=this;
+    wx.request({
+      url: api.headUrl +'/api/agent/hint',
+      success:function(res){
+         _this.setData({
+           hintDetailList:res.data.data
+         })
+      }
+    })
   },
   okEvent: function () {
     //console.log(this.dialog.data.okText);
