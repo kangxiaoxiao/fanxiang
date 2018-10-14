@@ -9,9 +9,14 @@
   flex:1;
 }
 .newsListWrapper .newsItem .left text{
+  display:block;
   font-size:30rpx;
   line-height:42rpx;
   color:#333;
+}
+.newsListWrapper .newsItem .left text.des{
+  font-size:24rpx;
+  color:#666;
 }
 .newsListWrapper .newsItem .right{
   width:228rpx;

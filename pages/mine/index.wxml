@@ -61,13 +61,13 @@
           <image  class="more" mode="aspectFit" src="/pages/img/mine/cret.png"></image>
         </view>
       </view>
-      <view class="item" bindtap="call">
+      <view class="item" bindtap="call" wx:if="{{phoneNum}}">
         <view class="left">
           <image  mode="aspectFit" src="/pages/img/mine/collect.png"></image>
           <text>联系我们</text>
         </view>
         <view class="right telWrapper">
-          <text class="tel">{{phoneNum}}</text>
+          <text class="tel" >{{phoneNum}}</text>
           <image  mode="aspectFit" src="/pages/img/mine/cret.png"></image>
         </view>  
       </view>

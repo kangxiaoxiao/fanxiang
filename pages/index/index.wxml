@@ -59,29 +59,34 @@
         swiper-height="{{Height}}"
         wx:if="{{villageList && villageList.length}}"
         bind:myevent="goVillageDetal"
+        bind:animateStart="showUpDownAnimate"
       >
     </hotVillage> 
   </view>
 
   <view wx:if="{{topBarStatus!=0}}">
-     <view  class="conditionWrapper {{conditionTabStatus?'expand':''}}" >
+     <view  
+       class="conditionWrapper {{conditionTabStatus?'expand':''}}"
+       bindtap="pickupFilter"
+       data-status="{{conditionTabStatus}}"
+        >
         <view class="conditionTab">
           <view  
-              bindtap="tapName"
+              catchtap="tapName"
               data-status="1"
               class="item {{condition.city_code?'active':''}}" >
-            <text>位置</text>
+            <text>位置{{conditionTabStatus}}</text>
             <image src="{{conditionTabStatus!=1?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
           </view>
           <view 
-            bindtap="tapName"
+            catchtap="tapName"
             data-status="2"
             class="item {{condition.type?'active':''}}" >
             <text>筛选</text>
             <image src="{{conditionTabStatus!=2?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
           </view>
           <view  
-            bindtap="tapName"
+            catchtap="tapName"
             data-status="3"
             class="item {{condition.sort_type?'active':''}}">
             <text>排序</text>
@@ -110,7 +115,7 @@
                class="tabItem {{condition.type==item.value?'active':''}}" 
                wx:key="{{index}}" 
                wx:for="{{filterParams.filter_type}}"
-               bindtap='handleType'
+               catchtap='handleType'
                data-value="{{item.value}}"
                >
                 <text>{{item.title}}</text>
@@ -122,7 +127,7 @@
               class="item {{condition.sort_type==item.value?'active':''}}" 
               wx:key="{{index}}" 
               wx:for="{{filterParams.filter_sort}}" 
-              bindtap='handleSort'
+              catchtap='handleSort'
               data-value="{{item.value}}"
               wx:if="{{((item.value==1||item.value==2) && topBarStatus==2)?false:true}}">
               <text>{{item.title}}</text>
@@ -146,4 +151,12 @@
       </view>
     </view> 
   </view>  
+  <!--首页加载动画 animation="{{animationData}}" -->
+  <view  
+    class="animateWrapper" 
+    animation="{{animationData}}"
+    wx:if="{{showAnimate && topBarStatus==0}}"
+    >
+    <image src="/pages/img/icons/up.jpg" mode="aspectFill"></image> 
+    </view>
 </view>

@@ -9,6 +9,7 @@
     >
     <view class="left">
       <text>{{item.title}}</text>
+      <text class="des" wx:if="{{item.des}}">{{item.des}}</text>
     </view>
     <view class="right">
       <image src="{{item.banner_img}}" mode="aspectFill" ></image>

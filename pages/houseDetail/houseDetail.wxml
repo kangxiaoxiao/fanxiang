@@ -94,7 +94,7 @@
           bindtap='changeTab'>
           基本信息
         </view>
-        <view 
+        <!-- <view 
           class="tabHeadItem {{tabStatus==2?'active':''}}" 
           data-status="2"  
           bindtap='changeTab'>
@@ -105,7 +105,7 @@
           data-status="3"  
           bindtap='changeTab'>
           选项三
-        </view>
+        </view> -->
       </view>
       <view class="tabConWrapper">
         <view class="tabCon" wx:if="{{tabStatus==1}}">
@@ -117,6 +117,12 @@
             </view>
             <view class="item" wx:if="{{houseDetail.service_life}}">
               使用年限：{{houseDetail.service_life}}年
+            </view>
+            <view class="item" wx:if="{{houseDetail.service_life}}">
+              宜住人数：{{houseDetail.people_total}}人
+            </view>
+            <view class="item" wx:if="{{houseDetail.service_life}}">
+               床：{{houseDetail.bed_total}}张
             </view>
         </view>
         <view class="tabCon" wx:if="{{tabStatus==2}}">

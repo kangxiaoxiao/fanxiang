@@ -19,7 +19,20 @@
            <image src="/pages/img/login/msg.png" mode="aspectFill"></image>
          </label>
          <input bindinput ="codeInput" name="form.code" placeholder="请输入验证码"></input>
-         <button class="codeBtn" bindtap='getCode' loading="{{loading}}">获取验证码</button>
+         <button 
+            class="codeBtn" 
+            bindtap='getCode' 
+            loading="{{loading}}"
+            wx:if="{{second==0}}"
+            >
+            获取验证码
+           </button>
+           <button 
+            class="codeBtn" 
+            wx:if="{{second!=0}}"
+            >
+            {{second}}秒后重试
+           </button>
        </view>
        <button loading="{{loginLoading}}" class="loginBtn" formType="submit">登录</button>
      </form>

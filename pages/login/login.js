@@ -8,6 +8,7 @@ Page({
   data: {
     loading:false,
     loginLoading:false,
+    second:0,
     form:{
       mobile:"",
       code:"",
@@ -47,8 +48,20 @@ Page({
       });
       return false;
     }else{
+      let second = 60;
+      let secondInterval = setInterval(function () {
+        if (second) {
+          second--;
+        }
+        _this.setData({
+          second: second
+        })
+      }, 1000)
+      if (!second) {
+        clearInterval(secondInterval)
+      }
       _this.setData({
-        loading: true
+        loading: true,
       });
     }
     wx.request({
@@ -59,7 +72,7 @@ Page({
           loading: false
         });
         if(res.data.code==200){
-
+           
         }else{
           wx.showToast({
             title:"请输入正确的手机号",

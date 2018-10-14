@@ -29,10 +29,19 @@
       </view>
   </view>
   <view 
-   wx:if="{{orderDetail.status==0}}"
    class="bottomBtnWrapper" 
    data-id="{{orderDetail.id}}" 
-   bindtap="handleSubmit">
-    <text>立即支付</text>
+   data-status="{{orderDetail.status}}" 
+   bindtap="handleSubmit"
+   wx:if="{{orderDetail.status==0 ||orderDetail.status==1}}"
+   >
+    <text wx:if="{{orderDetail.status==0}}">立即支付</text>
+    <text wx:if="{{orderDetail.status==1}}">取消预定</text>
   </view> 
+
+   <comfirmDialog  
+   id="dialog"
+   bind:cancelEvent="cancelEvent" 
+   bind:okEvent="okEvent"
+ ></comfirmDialog> 
 </view>

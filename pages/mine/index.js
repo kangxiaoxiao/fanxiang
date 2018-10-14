@@ -5,13 +5,14 @@ var util = require('../../utils/util.js');
 Page({
   data: {
     token:"",
-    phoneNum:"4008888"
+    phoneNum:""
   },
   onShow:function(){
     this.init();
   },
   onLoad: function (options) {
     this.init();
+    this.getMineDetail();
   },
   init:function(){
     let _this = this;
@@ -28,6 +29,19 @@ Page({
         })
       }
     });
+  },
+  getMineDetail:function(){
+    let _this=this;
+    wx.request({
+      url: api.headUrl +'/api/user/me',
+      success:function(res){
+        if(res.data.code==200){
+          _this.setData({
+           phoneNum: res.data.data.contact
+         })
+        }
+      }
+    })
   },
   //订单列表
   goOrderList:function(e){

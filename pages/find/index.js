@@ -60,5 +60,10 @@ Page({
     wx.navigateTo({
       url: '/pages/villageDetail/villageDetail?id=' + id,
     })
+    // wx.navigateTo({
+    //   url: '/pages/houseDetail/houseDetail?id=' + id,
+    // }) 
+
+    
   }
 })

@@ -15,6 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("options", options)
     this.setData({
       orderId: options.id
     });
@@ -49,8 +50,58 @@ Page({
     })
   },
   handleSubmit:function(e){
+    let _this=this;
+    util.checkLogin();
     let id = e.currentTarget.dataset.id;
-    this.handleSubmit(id)
+    let status = e.currentTarget.dataset.status;
+    if (status==0){
+      //去支付
+      this.pay(id)
+    } else if (status==1){
+      //取消支付 
+      _this.dialog.setData({
+        title: '提示',
+        content: '确定取消预定吗?',
+        cancelText: '取消',
+        okText: '确定'
+      });
+      this.dialog.show();
+    }
+    
+  },
+  cancelEvent: function () {
+    this.dialog.close();
+  },
+  okEvent: function () {
+    let _this = this;
+    _this.cancelOrder();
+    this.dialog.close();
+  },
+  cancelOrder:function(){
+    let _this=this;
+    wx.request({
+      url: api.headUrl + '/api/order/cancel',
+      data: {
+        order_id: _this.data.orderId
+      },
+      header: {
+        Authorization: wx.getStorageSync("token")
+      },
+      method: "get",
+      success: function (res) {
+        if (res.data.code == 200) {
+          util.showToast("取消预定成功");
+          _this.getOrderDetail();
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '/pages/orderList/orderList?type=3'
+            })
+          }, 3000)
+        } else {
+          util.showToast(res.data.msg);
+        }
+      }
+    })
   },
   pay: function (orderId) {
     let _this = this;
@@ -87,6 +138,7 @@ Page({
             fail: function (err) {
               wx.showToast({
                 title: "支付失败",
+                icon: 'cancel',
                 success: function (res) {
                   setTimeout(function () {
                     wx.navigateTo({
@@ -108,7 +160,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.dialog = this.selectComponent('#dialog');
   },
 
   /**
@@ -122,7 +174,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+  
   },
 
   /**

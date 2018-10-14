@@ -1,18 +1,34 @@
 // pages/aboutUs/aboutUs.js
+var api = require('../../utils/api.js');
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    version:"1.0.0"
+    version:"1.0.0",
+    aboutDetail:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getMineDetail();
+  },
+  getMineDetail: function () {
+    let _this = this;
+    wx.request({
+      url: api.headUrl + '/api/user/me',
+      success: function (res) {
+        if (res.data.code == 200) {
+          _this.setData({
+            aboutDetail: res.data.data.about_us
+          })
+        }
+      }
+    })
   },
 
   /**

@@ -16,6 +16,11 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    if (options.orderId){
+      wx.navigateTo({
+        url: '/pages/orderDetail/orderDetail?id=' + options.orderId,
+      })
+    }
     this.setData({
       orderType: parseInt(options.type)
     })

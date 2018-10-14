@@ -6,6 +6,7 @@
         circular="{{true}}"
         style='height:{{swiperHeight}}'
         vertical
+         bindchange="swiperChange"
         >
         <block 
           wx:for="{{villageList}}" 
@@ -18,9 +19,11 @@
           id="{{item.id}}"
           >
             <image 
+              data-imageindex="{{index}}"
               class="bottomShadow" 
               src="/pages/img/icons/bottomShadow.png"
               mode="aspectFill"
+              bindload="showUpDownAnimate"
               ></image>
             <view class="introWrapper">
                   <view class="bottomCon">

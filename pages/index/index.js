@@ -21,6 +21,8 @@ Page({
     },
     conditionTabStatus:"",
     houseList:[], //房源列表
+    animationData:{}, //动画
+    showAnimate:false
   },
   onLoad: function () {
     this.setBannerHeight();
@@ -31,6 +33,55 @@ Page({
     this.getHotVillageList(curCityCode);
     //获取筛选项
     this.getFilterParam();    
+  },
+  onReady:function(){
+    //监听页面初次渲染完成
+  },
+  showUpDownAnimate:function(e){
+    console.log("组件传过来的值",e.detail);
+    let _this = this;
+    _this.setData({
+      showAnimate:true
+    });
+    var animation = wx.createAnimation({
+      timingFunction: 'ease-out',
+    })
+    this.animation = animation
+    this.setData({
+      animationData: animation.export()
+    })
+    var n = 1;
+    let animateExport = setInterval(function () {
+      n = -n;
+      this.animation.translateY(10 * (n)).step()
+      this.setData({
+        animationData: this.animation.export()
+      })
+    }.bind(this), 500);
+    setTimeout(function () {
+      clearInterval(animateExport);
+      _this.setData({
+        showAnimate: false
+      })
+    }, 5000)
+    if (e.detail == 0) {
+      clearInterval(animateExport);
+      _this.setData({
+        showAnimate: false
+      })
+    }
+  },
+  pickupFilter:function(e){
+    let status = e.currentTarget.dataset.status;
+    if (!status){
+      return ;
+    }
+    if (status){
+      status=""
+    }
+    this.setData({
+      conditionTabStatus: status
+    })
   },
   getFilterParam(){
     let _this=this;

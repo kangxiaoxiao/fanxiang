@@ -38,6 +38,14 @@ Page({
   //   })
    
   // },
+  selectDate:function(e){
+    let _this = this;
+    let disable_time = e.currentTarget.dataset.disabletime;
+    console.log("跳转到价格日历",disable_time);
+    wx.navigateTo({
+      url: '/pages/datePicker/datePicker?disable_time=' + disable_time + "&houseid=" + _this.data.houseId,
+    })
+  },
   handleDayNum:function(){
     let _this=this;
     let dayNum = 0;
@@ -126,12 +134,42 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this=this;
+    if (options.timeStr){
+      console.log(JSON.parse(options.timeStr));
+      console.log(JSON.parse(options.timeStr)[0]);
+    }
+    
     util.checkLogin();
     let houseId = options.id;
     this.setData({
       houseId: houseId
     })
     this.getHoudeDetail();
+    if (options.timeStr){
+      this.bindDateChange(JSON.parse(options.timeStr));
+    }
+    
+  },
+  bindDateChange: function (dayStr) {
+    let _this = this;
+    let weekArr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+    let starDay = new Date(dayStr[0].day);
+    let endDay = new Date(dayStr[1].day);
+    this.setData({
+      startDate: util.formatTime(starDay, "onlyDate", "en"),
+      startDateDay: weekArr[starDay.getDay()],
+      _starDate: util.formatTime(starDay, "onlyDate"),
+      endDate: util.formatTime(endDay, "onlyDate", "en"),
+      endDateDay: weekArr[endDay.getDay()],
+      _endDate: util.formatTime(endDay, "onlyDate"),
+    });
+    // this.handleDateRange();
+    this.handleDayNum();
+    this.getTotal();
+    // this.setData({
+    //   startDate: e.detail.value
+    // })
   },
   getHoudeDetail:function(){
     let _this=this;
@@ -140,8 +178,11 @@ Page({
       data: { id: _this.data.houseId},
       success:function(res){
          if(res.data.code==200){
+           let houseDetail=res.data.data;
+           houseDetail.disable_time = houseDetail.disable_time.join(",");
+           console.log("无房日期字符串", houseDetail.disable_time);
            _this.setData({
-             houseDetail:res.data.data
+             houseDetail: houseDetail
            });
            _this.getTotal();
          }
@@ -158,12 +199,12 @@ Page({
     let tomorrow = new Date(today.getTime()+24*60*60*1000);
     let weekArr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
      this.setData({
-       _starDate: util.formatTime(today, "onlyDate"),
-       _endDate: util.formatTime(tomorrow, "onlyDate"),
-       startDate: util.formatTime(today, "onlyDate", "en"),
-       startDateDay: weekArr[today.getDay()],
-       endDate: util.formatTime(tomorrow, "onlyDate","en"),
-       endDateDay: weekArr[tomorrow.getDay()]
+       _starDate: _this.data._starDate||util.formatTime(today, "onlyDate"),
+       _endDate: _this.data._endDate ||util.formatTime(tomorrow, "onlyDate"),
+       startDate: _this.data.startDate ||util.formatTime(today, "onlyDate", "en"),
+       startDateDay: _this.data.startDateDay ||weekArr[today.getDay()],
+       endDate: _this.data.endDate ||util.formatTime(tomorrow, "onlyDate","en"),
+       endDateDay: _this.data.endDateDay ||weekArr[tomorrow.getDay()]
      });
     console.log("开始时间", this.data.startDate, this.data.startDateDay);
     console.log("结束时间", this.data.endDate, this.data.endDateDay);
@@ -252,7 +293,7 @@ Page({
                  success: function (res) {
                    setTimeout(function () {
                      wx.navigateTo({
-                       url: '/pages/orderList/orderList?type=1',
+                       url: '/pages/orderList/orderList?type=1&orderId=' + orderId,
                      })
                      wx.hideToast();
                    }, 1500)
@@ -261,11 +302,12 @@ Page({
              },
              fail:function(err){
                wx.showToast({
-                 title: "支付成功",
+                 title: "支付失败",
+                 icon:'cancel',
                  success: function (res) {
                    setTimeout(function () {
                      wx.navigateTo({
-                       url: '/pages/orderList/orderList?type=0',
+                       url: '/pages/orderList/orderList?type=0&orderId='+orderId,
                      })
                      wx.hideToast();
                    }, 1500)
@@ -291,7 +333,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+  
   },
 
   /**

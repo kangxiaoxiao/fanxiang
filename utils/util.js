@@ -53,6 +53,7 @@ const formatDate= function(date){
 }
 
 module.exports = {
+  formatNumber: formatNumber,
   formatTime: formatTime,
   formatDate: formatDate,
   checkLogin: checkLogin,

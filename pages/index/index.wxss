@@ -89,7 +89,7 @@
 }
 
 .conditionWrapper{
-  position:absolute;
+  position:fixed;
   left:0;
   right:0;
   width:100%;
@@ -182,3 +182,17 @@
 .goodVillageWrapper{
   padding-top:162rpx;
 }  
+
+/*animateWrapper*/
+.animateWrapper{
+  position:absolute;
+  left:50%;
+  top:50%;
+  margin-left:-50rpx;
+  margin-top:-50rpx;
+
+}
+.animateWrapper image{
+  height:100rpx;
+  width:100rpx;
+}
