@@ -18,8 +18,7 @@
     "pages/applayDesign/applayDesign",
     "pages/orderList/orderList",
     "pages/orderDetail/orderDetail",
-    "pages/datePicker/datePicker",
-    "pages/map/map"
+    "pages/datePicker/datePicker"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -12,37 +12,61 @@
         </view>
         <view class="item">
           <view class="imageWrapper" bindtap='loadImage' data-status="0">
-            <image 
-            mode="aspectFill"
-            src="{{form.picture1?form.picture1:'/pages/img/find/pic1.png'}}"></image>
-             <view class="loading"  wx:if="{{picStatus==='0'}}">
+            <view class="item left">
+              <image 
+                mode="aspectFill"
+                src="{{form.picture1?form.picture1:'/pages/img/find/pic1.png'}}"></image>
+                <view class="loading"  wx:if="{{picStatus==='0'}}">
+                    <view class="loadingCon">
+                      <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
+                      <text>上传中</text>
+                  </view> 
+                </view>
+            </view>
+            <view class="item right">
+              <text>正面示例</text>
+              <image 
+                mode="aspectFill"
+                src="/pages/img/find/id1.png"></image>
+            </view>
+          </view>
+          <view class="imageWrapper" bindtap='loadImage' data-status="1">
+            <view class="item left">
+              <image 
+              mode="aspectFill"
+              src="{{form.picture2?form.picture2:'/pages/img/find/pic2.png'}}"></image>
+              <view class="loading" wx:if="{{picStatus==='1'}}">
                 <view class="loadingCon">
                   <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
                   <text>上传中</text>
-               </view> 
-             </view>
-          </view>
-          <view class="imageWrapper" bindtap='loadImage' data-status="1">
-            <image 
-            mode="aspectFill"
-            src="{{form.picture2?form.picture2:'/pages/img/find/pic2.png'}}"></image>
-            <view class="loading" wx:if="{{picStatus==='1'}}">
-              <view class="loadingCon">
-                <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
-                <text>上传中</text>
-              </view> 
+                </view> 
+              </view>
+            </view>
+            <view class="item right">
+              <text>背面示例</text>
+              <image 
+                mode="aspectFill"
+                src="/pages/img/find/id1.png"></image>
             </view>
           </view>
           <view class="imageWrapper" bindtap='loadImage' data-status="2">
-            <image 
-            mode="aspectFill"
-            src="{{form.picture3?form.picture3:'/pages/img/find/pic3.png'}}"></image>
+            <view class="item left">
+              <image 
+                mode="aspectFill"
+                src="{{form.picture3?form.picture3:'/pages/img/find/pic3.png'}}"></image>
              <view class="loading" wx:if="{{picStatus==='2'}}">
                <view class="loadingCon">
                   <image src="/pages/img/icons/loading.gif" mode="aspectFill"></image>
                   <text>上传中</text>
                </view> 
              </view>
+            </view>
+            <view class="item right">
+              <text>手持示例</text>
+              <image 
+                mode="aspectFill"
+                src="/pages/img/find/id1.png"></image>
+            </view>
           </view>
         </view>
         <view class="item">

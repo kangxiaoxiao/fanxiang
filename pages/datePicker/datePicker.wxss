@@ -11,11 +11,11 @@
 }
  
 .date-day.bgitem {
-  background-color: #d8ecf9;
+  background-color: rgba(51,194,166,0.5);
 }
  
 .date-day.active {
-  background: #099fde;
+  background: #33C2A6;
   color: #fff;
 }
  
@@ -36,7 +36,7 @@
 }
  
 .week {
-  color: #099fde;
+  color: #33C2A6;
 }
  
 .row {
@@ -49,7 +49,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 35rpx;
+  font-size: 28rpx;
+}
+.item-days .houseNum{
+  font-size:24rpx;
 }
 .amount{
   font-size: 30rpx;

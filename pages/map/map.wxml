@@ -1,9 +1,0 @@
-<!--pages/map/map.wxml-->
-<map 
-  id="map" 
-  longitude="{{houseDetail.lng}}" 
-  latitude="{{houseDetail.lat}}" 
-  scale="14" 
-  markers="{{markers}}" 
-  style="width: 100%; height: 400rpx;"
-  ></map>

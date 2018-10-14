@@ -50,21 +50,7 @@ Page({
   onShareAppMessage: function (res) {
     let _title = this.data.houseDetail.title;
     return {
-      title: _title,
-      success: function (res) {
-        console.log(res.shareTickets[0])
-        // console.log
-        wx.getShareInfo({
-          shareTicket: res.shareTickets[0],
-          success: function (res) { console.log(res) },
-          fail: function (res) { console.log(res) },
-          complete: function (res) { console.log(res) }
-        })
-      },
-      fail: function (res) {
-        // 分享失败
-        console.log(res)
-      }
+      title: _title
     }
   },
   handleMapTap:function(){
