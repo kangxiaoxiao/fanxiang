@@ -21,7 +21,7 @@
           data-status="1"
           >
            <view class="tabCon">
-             <view class="txt">精品民宿</view>
+             <view class="txt">精品小院</view>
              <view class="bottomLine"></view>
            </view>    
       </view>
@@ -75,7 +75,7 @@
               catchtap="tapName"
               data-status="1"
               class="item {{condition.city_code?'active':''}}" >
-            <text>位置{{conditionTabStatus}}</text>
+            <text>位置</text>
             <image src="{{conditionTabStatus!=1?'/pages/img/icons/cret.png':'/pages/img/icons/cretLight.png'}}" mode="aspectFill" />
           </view>
           <view 
@@ -109,7 +109,7 @@
              </view>
           </view>
           <view class="conWrapperItem shaixuanItem" wx:if="{{conditionTabStatus==2}}">
-            <view class="tabTitle">经营状态</view>
+            <view class="tabTitle">经营类型</view>
             <view class="tabItemWrapper">
               <view 
                class="tabItem {{condition.type==item.value?'active':''}}" 

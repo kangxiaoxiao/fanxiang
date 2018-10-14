@@ -47,6 +47,44 @@ Page({
   onShow: function () {
     this.getHoudeDetail()
   },
+  onShareAppMessage: function (res) {
+    let _title = this.data.houseDetail.title;
+    return {
+      title: _title,
+      success: function (res) {
+        console.log(res.shareTickets[0])
+        // console.log
+        wx.getShareInfo({
+          shareTicket: res.shareTickets[0],
+          success: function (res) { console.log(res) },
+          fail: function (res) { console.log(res) },
+          complete: function (res) { console.log(res) }
+        })
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    }
+  },
+  handleMapTap:function(){
+    console.log("点击了地图");
+    let _this=this;
+    var latitude = _this.data.houseDetail.lat
+    var longitude = _this.data.houseDetail.lng
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {     
+        wx.openLocation({
+          latitude: +latitude,
+          longitude: +longitude,
+          name: _this.data.houseDetail.title,
+          address: _this.data.houseDetail.address||"",
+          scale: 28
+        })
+      }
+    })  
+  },
   getHoudeDetail:function(){
     let _this=this;
     let params={

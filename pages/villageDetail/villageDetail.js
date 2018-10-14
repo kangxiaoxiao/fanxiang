@@ -76,6 +76,25 @@ Page({
       }
     })
   },
+  onShareAppMessage: function (res) {
+    let _title = this.data.villageDetail.title;
+    return {
+      title: _title,
+      success: function (res) {
+        console.log(res.shareTickets[0])
+        wx.getShareInfo({
+          shareTicket: res.shareTickets[0],
+          success: function (res) { console.log(res) },
+          fail: function (res) { console.log(res) },
+          complete: function (res) { console.log(res) }
+        })
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    }
+  },
   reserve:function(){
     console.log("立即预定");
     let _this=this;
@@ -123,13 +142,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
 
   }
 })

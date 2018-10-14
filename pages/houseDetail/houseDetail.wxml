@@ -179,6 +179,7 @@
         <view class="_title">房源位置</view>
         <view class="con">
           <map 
+            bindtap="handleMapTap"
             id="map" 
             longitude="{{houseDetail.lng}}" 
             latitude="{{houseDetail.lat}}" 
