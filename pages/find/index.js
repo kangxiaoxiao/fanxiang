@@ -40,10 +40,16 @@ Page({
       url = "/pages/rentHouse/rentHouse"
     } else if (status == 2){
       url = "/pages/makeMoney/makeMoney"
+    } else if (status == 3){
+      url = "/pages/design/design"
+    } else if (status == 4) {
+      console.log("私人定制乡村小院");
     }
-    wx.navigateTo({
-      url: url
-    })
+    if (url){
+      wx.navigateTo({
+        url: url
+      })
+    } 
   },
   errLoadImg(event){
     var index = event.currentTarget.dataset.index

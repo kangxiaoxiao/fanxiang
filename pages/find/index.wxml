@@ -11,7 +11,7 @@
               mode="aspectFill"
               src="/pages/img/find/buyHouse.png">
             </image>
-            <view class="txt">帮我租房／买房</view>
+            <!-- <view class="txt">帮我租房／买房</view> -->
           </view>
         </view>
         <view  class="item " >
@@ -23,21 +23,46 @@
               mode="aspectFill"
               src="/pages/img/find/rentHouse.png">
             </image>
-            <view class="txt">帮我出租／出售</view>
+            <!-- <view class="txt">有房出租／出售</view> -->
+          </view>    
+        </view>
+      </view>
+      <view class="li">
+        <view class= "item" >
+          <view 
+            class="left imgCon"
+            bindtap='handleTopBtnStatusChange'
+            data-status="2"
+            >
+            <image 
+              mode="aspectFill"
+              src="/pages/img/find/makeMoney.png">
+            </image>
+          </view>
+        </view>
+        <view  class="item " >
+          <view class="right imgCon" 
+            bindtap='handleTopBtnStatusChange'
+            data-status="3"
+          >
+            <image 
+              mode="aspectFill"
+              src="/pages/img/find/design.png">
+            </image>
           </view>    
         </view>
       </view>
       <view 
         class="li imgCon"
         bindtap='handleTopBtnStatusChange'
-        data-status="2"
+        data-status="4"
       >
          <image 
           mode="aspectFill"
-          src="/pages/img/find/makeMoney.png"
+          src="/pages/img/find/yard.png"
           >
          </image>
-         <view class="txt">做经纪人赚佣金</view>
+         <!-- <view class="txt">做经纪人赚佣金</view> -->
       </view>
      
   </view>

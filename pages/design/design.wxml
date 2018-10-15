@@ -1,0 +1,50 @@
+<view class="buyHouseWrapper">
+  <!-- <view  class="formTitle">请输入您的要求</view> -->
+  <view class="formWrapper">
+    <view class="formCon">
+      <form  bindsubmit="formSubmit" >
+        <view>
+            <view class="item btns">
+                <input value="{{form.status}}" name="status" style="display:none"></input>
+                <view class="btnWrapper">
+                  <view class="btnCon left">
+                    <button 
+                      class="btn {{form.status==1?'active':''}}"
+                      bindtap='handleStatusChange'
+                      data-status='1'
+                      >公司
+                    </button>
+                  </view>
+                </view>
+                <view class="btnWrapper">
+                  <view class="btnCon right">
+                    <button 
+                        class="btn {{form.status==2?'active':''}}"
+                        bindtap='handleStatusChange'
+                        data-status='2'
+                        >个人
+                      </button>
+                  </view>
+                </view>  
+              </view>
+          </view>
+          <view class="item">
+            <input placeholder-class="phcolor"  placeholder='公司名称' name="companyName"></input>
+          </view>
+          <view class="item">
+            <input placeholder-class="phcolor"  placeholder='联系人' name="designName" ></input>
+          </view>
+          <view class="item">
+            <input placeholder-class="phcolor"  placeholder='联系方式' name="tel" type="number"></input>
+          </view>
+          <view class="item">
+            <input placeholder-class="phcolor"  placeholder='洽谈时间' name="discussTime"></input>
+          </view>
+          <view class="item">
+            <textarea placeholder-class="phcolor"  maxlength="-1" placeholder='备注' name="other"></textarea>
+          </view>
+          <button class="submitBtn" loading="{{loading}}"  formType="submit">提交</button>
+      </form>
+    </view>
+  </view>
+</view>

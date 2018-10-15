@@ -69,6 +69,11 @@ Page({
       url: '/pages/aboutUs/aboutUs',
     })
   },
+  joinUs:function(){
+    wx.navigateTo({
+      url: '/pages/joinUs/joinUs',
+    })
+  },
   onShareAppMessage: function () {
     return {
       title: '凡乡',

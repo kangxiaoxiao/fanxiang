@@ -1,0 +1,17 @@
+/* pages/joinUs/joinUs.wxss */
+.joinUsWrapper{
+  padding-top:20rpx;
+  margin:0 30rpx;
+}
+.joinUsWrapper .li+.li{
+  margin-top:32rpx;
+}
+.joinUsWrapper .li .liCon{
+  border-radius:6rpx;
+  overflow: hidden;
+}
+.joinUsWrapper .li image{
+  display:block;
+  width:100%;
+  height:222rpx;
+}

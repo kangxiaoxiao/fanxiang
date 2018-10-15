@@ -1,0 +1,18 @@
+<!--pages/joinUs/joinUs.wxml-->
+<view class="joinUsWrapper">
+  <view class="li" bindtap='handleJoinUs' data-status="0">
+    <view class="liCon">
+      <image src="/pages/img/joinUs/rentHouse.png" mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class="li" bindtap='handleJoinUs' data-status="1">
+    <view class="liCon">
+      <image src="/pages/img/joinUs/makeMoney.png"  mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class="li" bindtap='handleJoinUs' data-status="2">
+    <view class="liCon">
+      <image src="/pages/img/joinUs/design.png"  mode="aspectFill"></image>
+    </view>  
+  </view>
+</view>

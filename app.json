@@ -18,7 +18,9 @@
     "pages/applayDesign/applayDesign",
     "pages/orderList/orderList",
     "pages/orderDetail/orderDetail",
-    "pages/datePicker/datePicker"
+    "pages/datePicker/datePicker",
+    "pages/joinUs/joinUs",
+    "pages/design/design"
   ],
   "window": {
     "backgroundTextStyle": "light",

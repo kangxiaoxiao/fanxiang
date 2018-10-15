@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "做设计师赚设计费",
+  "usingComponents": {
+    "dialog": "/pages/components/dialog/dialog"
+  }
+}

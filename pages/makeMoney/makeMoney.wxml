@@ -46,7 +46,7 @@
               <text>背面示例</text>
               <image 
                 mode="aspectFill"
-                src="/pages/img/find/id1.png"></image>
+                src="/pages/img/find/id2.png"></image>
             </view>
           </view>
           <view class="imageWrapper" bindtap='loadImage' data-status="2">
@@ -65,7 +65,7 @@
               <text>手持示例</text>
               <image 
                 mode="aspectFill"
-                src="/pages/img/find/id1.png"></image>
+                src="/pages/img/find/id3.png"></image>
             </view>
           </view>
         </view>
@@ -100,7 +100,6 @@
   </view>
 
   <dialog 
-    wx:if="{{hintDetailList && hintDetailList.length>0}}"
     title="做经纪人赚佣金" 
     footer="加入我们" 
     bind:okEvent="okEvent"
@@ -108,7 +107,7 @@
     >
     <view slot="con">
       <view class="conWrapper">
-         <view class="item hitDetailWrapper" wx:for="{{hintDetailList}}">
+         <view class="item hitDetailWrapper" wx:for="{{hintDetailList}}" wx:key="{{index}}">
            <text class="star {{index==2?'hidden':''}}">*</text>
            <text>{{index+1}}、{{item}}</text>
          </view>
