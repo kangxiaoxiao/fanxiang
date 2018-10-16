@@ -82,7 +82,6 @@
           <image 
             src="{{item.banner_img}}" 
             mode="aspectFill"
-            binderror="errLoadImg"
             data-index='{{index}}'
           >
           </image> 

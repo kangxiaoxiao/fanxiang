@@ -36,7 +36,7 @@
    wx:if="{{orderDetail.status==0 ||orderDetail.status==1}}"
    >
     <text wx:if="{{orderDetail.status==0}}">立即支付</text>
-    <text wx:if="{{orderDetail.status==1}}">取消预定</text>
+    <text wx:if="{{orderDetail.status==1}}">取消预订</text>
   </view> 
 
    <comfirmDialog  

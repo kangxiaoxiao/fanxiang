@@ -136,19 +136,28 @@
         </view>
     </view> 
     <view class="goodVillageWrapper">
-      <view 
+
+    <goodVillage  
+      topBarStatus="{{topBarStatus}}" 
+      houseList="{{houseList}}" 
+      bind:houseDetailEvent="goHouseDetail"
+      >
+    </goodVillage>
+        
+      <!-- <view 
+      wx:if="{{houseList && houseList.length}}"
       wx:for="{{houseList}}" 
-      wx:key="{{index}}"
+      wx:key="{{index+item.id+topBarStatus}}"
       id="{{item.id}}"
       bindtap='goHouseDetail'
       >
         <goodVillage  
+          wx:key="{{index+item.id+topBarStatus}}"
           topBarStatus="{{topBarStatus}}" 
           houseDetail="{{item}}" 
-          wx:if="{{houseList && houseList.length}}"
           >
         </goodVillage>
-      </view>
+      </view> -->
     </view> 
   </view>  
   <!--首页加载动画 animation="{{animationData}}" -->

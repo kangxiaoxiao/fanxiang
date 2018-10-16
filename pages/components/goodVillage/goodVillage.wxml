@@ -1,28 +1,35 @@
 <view class="houseListCon">
   <view 
+    wx:for="{{_houseList}}"
+    wx:key="{{index+item.id}}"
     class="houseItem"
   >
-    <view class="imageWrapper">
-      <image  src="{{_houseDetail.banner_img}}" mode="aspectFill"></image>
-      <view class="imgOverWrapper">
-        <view class="typeWrapper">
-          <text wx:if="{{_houseDetail.type==1}}">自营</text>
-          <text wx:if="{{_houseDetail.type==2}}">经纪人</text>
-          <text wx:if="{{_houseDetail.type==3}}">房东</text>
+    <view 
+      class="li"
+      bindtap="goHousedetailEvent"
+      data-status="{{item.id}}"
+    >
+      <view class="imageWrapper">
+        <image  src="{{item.banner_img}}" mode="aspectFill"></image>
+        <view class="imgOverWrapper">
+          <view class="typeWrapper">
+            <text wx:if="{{item.type==1}}">自营</text>
+            <text wx:if="{{item.type==2}}">经纪人</text>
+            <text wx:if="{{item.type==3}}">房东</text>
+          </view>
+          <view class="starWrapper">
+            <star class="hot"  starNum="{{item.hot}}" starTitle="热度"></star>
+          </view>
         </view>
-        <view class="starWrapper">
-           <star class="hot"  starNum="{{_houseDetail.hot}}" starTitle="热度"></star>
-        </view>
-      </view>
     </view>
     <view class="dscWrapper">
       <view class="item _title">
-        <text>{{_houseDetail.title}}</text>
+        <text>{{item.title}}</text>
       </view>
       <view class="item tagWrapper">
         <view 
           class="tagItem"
-          wx:for="{{_houseDetail.tag}}" 
+          wx:for="{{item.tag}}" 
           wx:for-item="item2" 
           wx:key="{{item2.tag_id}}">
           {{item2.name}}
@@ -30,14 +37,14 @@
       </view>
       <view class="item addressWrapper">
         <image src="/pages/img/icons/address.png" mode="aspectFill"></image>
-        <text>{{_houseDetail.address}}</text>
+        <text>{{item.address}}</text>
       </view>
       <view class="item priceWrapper">
          <view class="priceItem" wx:if="{{topBarStatus!=2}}">
            <label>短租：</label>
            <view class="priceNumWrapper">
               <text class="_type">¥</text>
-              <text class="priceNUm">{{_houseDetail.short_price}}</text>
+              <text class="priceNUm">{{item.short_price}}</text>
               <text>/晚</text>
            </view>
          </view>
@@ -45,11 +52,12 @@
            <label>长租：</label>
            <view class="priceNumWrapper">
               <text class="_type">¥</text>
-              <text class="priceNUm">{{_houseDetail.longPriceNum||''}}</text>
-              <text>/{{_houseDetail.longPriceUnit||''}}</text>
+              <text class="priceNUm">{{item.longPriceNum||''}}</text>
+              <text>/{{item.longPriceUnit||''}}</text>
            </view>
          </view>
       </view>
+    </view>
     </view>
   </view>
 </view>

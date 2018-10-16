@@ -4,9 +4,29 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    houseDetail: {
-      type: Object,
-      value: {}
+    // houseDetail: {
+    //   type: Object,
+    //   value: {}
+    // },
+    houseList:{
+      type:Array,
+      value:[],
+      observer: function (newVal, oldVal, changedPath){
+        let _this=this;
+        if (!newVal){
+          return ;
+        }
+        let _houseList = newVal;
+        _houseList = newVal.map((cur, index, arr) => {
+          cur.longPriceNum = cur.long_price.split('/')[0];
+          cur.longPriceUnit = cur.long_price.split('/')[1];
+          return cur;
+        });
+        _this.setData({
+          _houseList: _houseList
+        });
+        console.log("_houseList",_this.data._houseList);
+      }
     },
     topBarStatus:{
       type:String, //0=>热门推荐 1=>精品民宿 2=>乡村民宿 
@@ -18,22 +38,12 @@ Component({
    * 组件的初始数据
    */
   data: {
-    _houseDetail:{}
+    //_houseDetail:{}
+    _houseList:[]
   },
+ 
   ready: function () {
-    let _this=this;
-    // _this.properties.houseList.map((cur,index,arr)=>{
-    //   cur.longPriceNUm = cur.long_price.split('/')[0];
-    //   cur.longPriceUnit = cur.long_price.split('/')[1];
-    //   return cur;
-    // });
-    let obj = _this.properties.houseDetail.long_price ;
-    _this.properties.houseDetail.longPriceNum = obj.split('/')[0];
-    _this.properties.houseDetail.longPriceUnit = obj.split('/')[1];
-    _this.setData({
-      _houseDetail: _this.properties.houseDetail
-    })
-    
+      
   },
 
 
@@ -41,6 +51,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    goHousedetailEvent:function(e){
+      var id = e.currentTarget.dataset.status;
+      var myEventDetail = {
+        "id": id
+      } // detail对象，提供给事件监听函数
+      var myEventOption = {} // 触发事件的选项
+      this.triggerEvent('houseDetailEvent', myEventDetail, myEventOption)
+    }
   }
 })

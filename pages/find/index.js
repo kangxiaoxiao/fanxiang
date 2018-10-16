@@ -51,13 +51,6 @@ Page({
       })
     } 
   },
-  errLoadImg(event){
-    var index = event.currentTarget.dataset.index
-    var img = 'villageList[' + index + '].banner_img'
-    this.setData({
-      [img]: '/pages/img/find/defaultImg.jpg'
-    })  
-  },
   goVillageDetail:function(e){
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({

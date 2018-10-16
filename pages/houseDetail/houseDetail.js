@@ -173,7 +173,7 @@ Page({
 
   },
   goReserveDetail:function(){
-    //立即预定 houseId
+    //立即预订 houseId
     util.checkLogin();
     wx.navigateTo({
       url: '/pages/reserveDetail/reserveDetail?id=' + this.data.houseId,

@@ -7,6 +7,7 @@
   background:#fff;
 }
 .houseListCon .imageWrapper{
+  position:relative;
   border-radius:12rpx;
   overflow: hidden;
   font-size:0;

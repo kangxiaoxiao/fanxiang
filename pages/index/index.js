@@ -188,9 +188,11 @@ Page({
       method:"post",
       success:function(res){
         wx.hideLoading();
-        _this.setData({
-          houseList:res.data.data
-        })
+        if(res.data.code==200){
+          _this.setData({
+            houseList: res.data.data
+          });
+        } 
       },
       fail:function(){
         wx.hideLoading();
@@ -288,7 +290,8 @@ Page({
   },
   //跳转到详情
   goHouseDetail: function (e) {
-    let houseId = e.currentTarget.id;
+    console.log("监听点击事件",e);
+    let houseId = e.detail.id;
     wx.navigateTo({
       url: '/pages/houseDetail/houseDetail?id=' + houseId,
     })

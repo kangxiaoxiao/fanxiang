@@ -214,7 +214,7 @@
         </view>
       </view> -->
       <view class="item" >
-        <view class="_title">预定规则</view>
+        <view class="_title">预订规则</view>
         <view class="con">
           <view wx:for="{{houseDetail.book_rule}}" wx:key="{{index}}">
             <text class="txt">{{item}}</text>
@@ -243,7 +243,7 @@
         bindtap='goReserveDetail'
         wx:if="{{houseDetail.category_id!=2}}"
         >
-        <cover-view class="txt">立即预定</cover-view>
+        <cover-view class="txt">立即预订</cover-view>
       </cover-view>
     </cover-view>
   

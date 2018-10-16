@@ -60,7 +60,7 @@ Page({
       //取消支付 
       _this.dialog.setData({
         title: '提示',
-        content: '确定取消预定吗?',
+        content: '确定取消预订吗?',
         cancelText: '取消',
         okText: '确定'
       });
@@ -89,7 +89,7 @@ Page({
       method: "get",
       success: function (res) {
         if (res.data.code == 200) {
-          util.showToast("取消预定成功");
+          util.showToast("取消预订成功");
           _this.getOrderDetail();
           setTimeout(function () {
             wx.navigateTo({
