@@ -1,6 +1,7 @@
 //获取应用实例
 const app = getApp();
 var api = require('../../utils/api.js');
+var util = require('../../utils/util.js');
 Page({
   data:{
     villageList:[]
@@ -43,7 +44,7 @@ Page({
     } else if (status == 3){
       url = "/pages/design/design"
     } else if (status == 4) {
-      console.log("私人定制乡村小院");
+      url = "/pages/customize/customize"
     }
     if (url){
       wx.navigateTo({

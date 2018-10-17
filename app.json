@@ -20,7 +20,8 @@
     "pages/orderDetail/orderDetail",
     "pages/datePicker/datePicker",
     "pages/joinUs/joinUs",
-    "pages/design/design"
+    "pages/design/design",
+    "pages/customize/customize"
   ],
   "window": {
     "backgroundTextStyle": "light",

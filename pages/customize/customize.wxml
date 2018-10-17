@@ -1,0 +1,12 @@
+<!--pages/customize/customize.wxml-->
+<view class="detailWrapper">
+  <view class="detailCon">
+    <view class="item" wx:for="{{customizeDetail}}" wx:key="{{index}}">
+      <image src="{{item.img}}" mode="widthFix"></image>
+      <text>{{item.des}}</text>
+    </view>
+  </view>
+  <cover-view class="customBtn" bindtap='goCustom' >
+    <cover-image class="btnImg" mode="aspectFill" src="/pages/img/icons/custom.png"></cover-image>
+  </cover-view>
+</view>

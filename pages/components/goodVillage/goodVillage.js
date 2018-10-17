@@ -25,7 +25,6 @@ Component({
         _this.setData({
           _houseList: _houseList
         });
-        console.log("_houseList",_this.data._houseList);
       }
     },
     topBarStatus:{

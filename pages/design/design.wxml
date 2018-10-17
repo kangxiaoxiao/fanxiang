@@ -29,7 +29,7 @@
               </view>
           </view>
           <view class="item">
-            <input placeholder-class="phcolor"  placeholder='公司名称' name="companyName"></input>
+            <input placeholder-class="phcolor"  placeholder='公司名称' name="companyName" wx:if="{{form.status==1}}"></input>
           </view>
           <view class="item">
             <input placeholder-class="phcolor"  placeholder='联系人' name="designName" ></input>
@@ -38,7 +38,42 @@
             <input placeholder-class="phcolor"  placeholder='联系方式' name="tel" type="number"></input>
           </view>
           <view class="item">
-            <input placeholder-class="phcolor"  placeholder='洽谈时间' name="discussTime"></input>
+            <view class="section">
+              <picker 
+              mode="date" 
+              value="{{form.date}}" 
+              start="{{formStartDate}}"  
+              bindchange="bindDateChange"
+              name="date"
+              >
+                <view class="item picker">
+                    <view class="txt placeTxt" wx:if="{{!form.date}}">洽谈日期</view>
+                    <view class="txt" wx:if="{{form.date}}">{{form.date}}</view>
+                    <image  class="creatIcon" src="/pages/img/icons/cret.png"></image>
+                 </view>
+              </picker>
+            </view>
+          </view>
+          <view class="item">
+            <view class="section">
+              <picker 
+                mode="time" 
+                value="{{form.time}}" 
+                start="09:00" 
+                end="18:00" 
+                bindchange="bindTimeChange"
+                name="time"
+                >
+                 <view class="item picker">
+                    <view class="txt placeTxt" wx:if="{{!form.time}}">洽谈时间</view>
+                    <view class="txt" wx:if="{{form.time}}">{{form.time}}</view>
+                    <image  class="creatIcon" src="/pages/img/icons/cret.png"></image>
+                 </view>
+                <!-- <view class="picker">
+                  当前选择: {{time}}
+                </view> -->
+              </picker>
+            </view>
           </view>
           <view class="item">
             <textarea placeholder-class="phcolor"  maxlength="-1" placeholder='备注' name="other"></textarea>

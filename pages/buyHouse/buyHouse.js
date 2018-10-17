@@ -5,6 +5,7 @@ Page({
     loading:false,
     region:[],
     token:"",
+    is_personal:0, //0=>默认 1=>来源于私人定制
     form:{
        region:"",
        status:1, //  1=> 买房 2=>租房
@@ -14,7 +15,12 @@ Page({
     }   
   },
   onLoad: function (options) {
-    let _this=this;
+    let _this = this;
+    if (options.from){
+      _this.setData({
+        is_personal: options.from
+      })
+    }   
     wx.getStorage({
       key: "token",
       success: function (res) {
@@ -56,7 +62,8 @@ Page({
       "budget": formMsg.price,
       "type": formMsg.status,
       "mobile": formMsg.tel,
-      "other": formMsg.other
+      "other": formMsg.other,
+      "is_personal": _this.data.is_personal
     };
     wx.request({
       url: url,

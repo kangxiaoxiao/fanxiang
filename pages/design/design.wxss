@@ -83,3 +83,28 @@
   height:254rpx;
   overflow: auto；
 }
+.picker{
+  display: flex;
+  flex-direction: row;
+  border:2rpx solid #ccc;
+  height:76rpx;
+  line-height:76rpx;
+  overflow: hidden;
+}
+.picker .txt{
+  flex:1;
+  color:#333;
+  font-size:28rpx;
+  line-height:76rpx;
+  padding:0 18rpx;
+}
+.picker .txt.placeTxt,.phcolor{
+  color:#AEAEAE
+
+}
+.picker .creatIcon{
+  width:14rpx;
+  height:10rpx;
+  margin: auto 32rpx auto 0;
+  flex:0 0 10rpx;
+}
