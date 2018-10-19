@@ -133,8 +133,8 @@
 } 
 .liWrapper .item  .telWrapper{
   display:block;
-  flex:0 0 200rpx;
-  width:200rpx;
+  flex:0 0 300rpx;
+  width:300rpx;
   text-align: right;
 }
 .loginOut{
