@@ -26,6 +26,7 @@
   z-index:10;
 }
 .introWrapper .introCon{
+  overflow: hidden;
   padding:0 30rpx 32rpx 30rpx; 
 }
 .introWrapper .introCon .item{

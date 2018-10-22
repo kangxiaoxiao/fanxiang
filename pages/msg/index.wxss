@@ -1,4 +1,8 @@
 /* pages/msg/index.wxss */
+.newsListWrapper{
+  background:#fff;
+  border-top:2rpx solid #e5e5e5;
+}
 .newsListWrapper .newsItem{
   display:flex;
   flex-direction: row;

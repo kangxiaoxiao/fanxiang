@@ -54,7 +54,7 @@
                                 <view class="priceCon">
                                   <text class="priceLable">长租：</text>
                                   <text class="priceTxt">
-                                    ¥<text class="price">{{item.long_price.price}}</text>/{{item.long_price.unit}}{{item.long_price.unit==1?'月':'年'}}</text>
+                                    ¥<text class="price">{{item.long_price.price}}</text>/{{item.long_price.unit_value}}{{item.long_price.unit==1?'月':'年'}}</text>
                                 </view>
                             </view>
                       </view> 

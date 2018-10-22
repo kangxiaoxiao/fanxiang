@@ -38,7 +38,7 @@
   background: linear-gradient( rgba(0,0,0,0.02),  rgba(0,0,0,0.01));
 }
 .VillagelistWrapper{
-  margin-top:50rpx;
+  margin:50rpx 0 18rpx 0;
 }
 .VillagelistWrapper .modeTitle{
   margin-bottom:28rpx;
@@ -55,6 +55,9 @@
   font-size:32rpx;
   line-height:32rpx;
   color:#333333;
+}
+.VillagelistCon{
+  overflow: hidden;
 }
 .VillagelistCon .item{
   position:relative;

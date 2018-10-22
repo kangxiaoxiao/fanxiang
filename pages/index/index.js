@@ -290,7 +290,6 @@ Page({
   },
   //跳转到详情
   goHouseDetail: function (e) {
-    console.log("监听点击事件",e);
     let houseId = e.detail.id;
     wx.navigateTo({
       url: '/pages/houseDetail/houseDetail?id=' + houseId,

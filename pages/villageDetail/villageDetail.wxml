@@ -50,7 +50,7 @@
         <text>{{villageDetail.address}}</text>
       </view>
     </view>
-    <view class="item" >
+    <view class="item" wx:if="{{villageDetail.img_text && villageDetail.img_text.length>0}}">
       <view class="_title">详细描述</view>
       <view class="con">
         <view wx:for="{{villageDetail.img_text}}" wx:key="{{index}}">

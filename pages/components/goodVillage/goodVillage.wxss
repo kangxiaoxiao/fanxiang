@@ -1,5 +1,6 @@
 .houseListCon {
   position:relative;
+  overflow: hidden;
 }
 .houseListCon .houseItem{
   margin-bottom:20rpx;
